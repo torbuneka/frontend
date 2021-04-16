@@ -1,10 +1,9 @@
-header.page-header {
+.conteiner1 {
   background: no-repeat url(bg.png);
   display:flex;
-  width: 1438px;
-  height: 769px;
-  left: 1px;
-  top: -1px;
+  width: 100%;
+  height: 100vh/*769px*/;
+  justify-content: flex-start;
 }
 
 .logo {
