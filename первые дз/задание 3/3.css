@@ -1,0 +1,16 @@
+body {
+    background-color:#040404;
+  }
+  .ball {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: #CC3F85;
+    border-radius: 100%;
+    animation: dws-bounce 4s linear infinite;
+  }
+  @keyframes dws-bounce {
+    0% { left: 500px; }
+    10% { left: 0%;}
+    100% { left: 500px; }
+  }

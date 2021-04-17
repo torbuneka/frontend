@@ -1,0 +1,11 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+video{
+    align-self: center;
+}
+audio{
+    align-self: center;
+}
