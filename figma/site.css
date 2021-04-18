@@ -44,15 +44,13 @@ body {
   padding-top: 2.62%;
 	justify-content: space-around;
 	align-items: center;
-	height: 769px;
+	height: 700px;
 }
 
 .header__center-container {
-  align-items: flex-end;
   justify-content: center;
   text-align: center;
   padding-top: 20%;
-  height:55%;
 }
 
 .header__center-container h1{
@@ -77,7 +75,7 @@ body {
   padding-top: 15%;
 }
 
-.flex-colum {
+.flex-column {
 	display: flex;
 	flex-direction: column;
 }
@@ -86,7 +84,6 @@ body {
 	display: flex;
 	flex-direction: row;
 }
-
 
 .triangle {
 	border-top: 11px solid transparent;
@@ -127,7 +124,6 @@ body {
 	align-items: center;
 }
 
-
 .menu_buttons{
   display:flex;
   color: #48555B;
@@ -146,169 +142,114 @@ body {
 }
 
 .active-button{
-  font-style: normal;
+  font-style: bold;
 	color: #00A4E5;
   font-family: Open Sans Bold;
 }
 
-
-
 .about{
-  display: inline;
-  position: absolute;
-  position: absolute;
- width: 941px;
- height: 344px;
- left: 249px;
-  top: 891px;
-  background: #FFFFFF;
+  margin-top: 57px;
+  margin-left: 250px;
+  margin-right: 250px;
+	width: 941px;
+  display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .story{
-  position: absolute;
-  width: 125px;
-  height: 25px;
-  left: 411px;
-  top: -1px;
   font-family: Open Sans Bold;
   font-style: normal;
-  /*font-weight: bold;*/
   font-size: 18px;
   line-height: 25px;
-  display: flex;
-  align-items: flex-end;
   text-align: center;
   letter-spacing: 2.30625px;
   color: #48555B;
 }
 
 .line{
-  position: absolute;
-  width: 50px;
-  height: 2px;
-  left: 447px;
-  top: 34px;
   border: 2px solid #00A4E5;
   background-color: #00A4E5;
+  width: 50px;
 }
 
-.about h1{
-  position: absolute;
-  width: 405.08px;
-  height: 81px;
-  left: 0px;
-  top: 116px;
-  font-family: Open Sans Bold;
-  font-style: normal;
-  /*font-weight: bold;*/
+.about__text {
+  padding-top: 40px;
+}
+
+.about__column {
+  width: 50%;
+	justify-content: space-between;
+}
+
+.about__title {
   font-size: 20px;
+  width: 405.08px;
   line-height: 27px;
-  display: flex;
+  font-family: Open Sans Bold;
   align-items: flex-end;
   letter-spacing: 0.1875px;
-  color: #48555B;
 }
 
-.about h2{
-  position: absolute;
-  width: 405.08px;
-  height: 115px;
-  left: 0px;
-  top: 227px;
-  font-family: Open Sans;
+.about__subtitle {
+  padding-top: 5%;
+  width: 400px;
+  letter-spacing: 0.1875px;
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
-  line-height: 23px;
-/* or 177% */
-  display: flex;
+  line-height: 23px;  
   align-items: center;
-  letter-spacing: 0.1875px;
-  color: #48555B;
 }
 
-.plan{
-  background-image: url(plan.png);
-  position: absolute;
-  width: 140px;
-  height: 224px;
-  left: 50%;
-  top: 35%;
-  display: flex;
-
+.about__row{
+  justify-content: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  align-items: center;
 }
 
-.plan h1{
-  align-items: center;
-  letter-spacing: 0.1875px;
-  font-family: Open Sans Bold;
-  font-style: normal;
-  font-weight: 800;
+.picture-text{
+  color: black;
+	
   font-size: 24px;
-  line-height: 29px;
-  color: #FFFFFF;
-  position: absolute;
   width: 68px;
-  height: 58px;
-  left: 14px;
-  top: 15px;
 }
 
-.manage{
-  background-image: url(manage.png);
-  position: absolute;
+.about-picture{
+  background-size: initial;
+  color: #FFFFFF;
+  font-size: 24px;
+  font-family: Open Sans Bold;
+  text-transform: uppercase;
   width: 140px;
   height: 224px;
-  left: 67%;
-  top: 35%;
-  display: flex;
-}
-
-.manage h1{
-  position: absolute;
-  width: 110px;
-  height: 58px;
-  left: 14px;
-  top: 15px;
-  font-family: Open Sans Bold;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 29px;
-/* or 121% */
-  display: flex;
-  align-items: center;
   letter-spacing: 0.1875px;
-  color: #FFFFFF;
+}
+.about-plan{
+  background-image: url("images/plan.png");
+  background-size: cover contain;
+  margin-left: 50px;
+  margin-right: 25px;
+}
+.about-manage{
+  background-image: url("images/manage.png");
+  margin-right: 25px;
+}
+.about-build{
+  background-image: url("images/build.png");
+}
+.about-text-margin{
+  margin: 15px;
 }
 
-.build{
-  background-image: url(build.png);
-  position: absolute;
-  width: 140px;
-  height: 224px;
-  left: 84%;
-  top: 35%;
-  display: flex;
-}
 
-.build h1{
-  position: absolute;
-  width: 76px;
-  height: 58px;
-  left: 14px;
-  top: 15px;
-  font-family: Open Sans Bold;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 29px;
-/* or 121% */
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.1875px;
-  color: #FFFFFF;
-}
+
+
+
+
+
+
 
 .service{
   position: absolute;
