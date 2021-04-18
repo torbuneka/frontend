@@ -13,17 +13,62 @@
   src: url("fonts/OpenSans-Bold.ttf");
 }
 
+body {
+	font-family: 'Open Sans';
+	color: #48555B;
+	font-size: 13px;
+}
 
 .header {
-	background: no-repeat url(images/bg.png);
+  
+	background: no-repeat url(images/bg.png) ;
 	height: 769px;
 	width: 100%;
+  color: #FFFFFF;
+	font-family: 'Open Sans';
+}
+
+.header__container {
+	justify-content: space-around;
+	align-items: center;
+	height: 769px;
+}
+
+.header__center-container {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.header__center-container h1{
+  text-align: center;
+  align-items: center;
+	font-family: 'BebasNeueBold';
+	font-size: 60px;
+	line-height: 70px;
+	letter-spacing: 5.70937px;
+}
+
+.header__center-container p{
+  font-size: 16px;
+	line-height: 15px;
+  text-align: center;
+}
+
+.header__center-scroll {
+  text-align: center;
 }
 
 .flex-colum {
 	display: flex;
 	flex-direction: column;
 }
+
+.flex-row {
+	display: flex;
+	flex-direction: row;
+}
+
 
 .triangle {
 	border-top: 11px solid transparent;
@@ -35,90 +80,19 @@
 	width: 0;
 }
 
-
-
-
-
-
-
-
-
-
-.main_conteiner{
-  background: no-repeat url(bg.png);
-  display:flex;
-  width: 100%;
-  height: 769px;
-  justify-content: space-around;
-  flex-direction: column;
-}
-
-
-.container_logo {
-  width: 100%;
-}
-
-.logo {
-  height: 10%;
-  display:flex;
+.logo{
   justify-content: center;
-}
-
-.logo div{
-  color: #DADADA;
+  display: flex; 
+	align-items: center;
   font-family: BebasNeueBold;
   font-size: 30px;
-  line-height: 19px;
-  display:flex;
-  align-items: center;
 }
-
-.main_text{
-  height: -10%;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-}
-
-.main_text h1{
+.logo-white{
   color: #FFFFFF;
-  font-family: BebasNeueBold;
-  font-size: 60px;
-  letter-spacing: 5.70937px;
-  margin: 0;
 }
-
-
-.main_text h2{
-  font-family: Open Sans;
-  font-style: normal;
-  font-size: 16px;
-  display: flex;
-  align-items: flex-end;
-  text-align: center;
-  color:#FFFFFF;
+.logo-black{
+  color: #000000;
 }
-
-.scroll{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-}
-
-.scroll p{
-  letter-spacing: 3.7px;
-  color: #FFFFFF;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 11px;
-  line-height: 15px;
-  text-align: center;
-}
-
-
 
 
 
