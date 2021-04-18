@@ -289,7 +289,7 @@ body {
   font-family: Open Sans;
 }
 
-.service__button{
+.button{
   width: 150px;
   background: #00A4E5;
   border: transparent;
@@ -305,30 +305,20 @@ body {
   padding-bottom: 80px;
 }
 
-
-
-
-
-
-
 .get-in-touch{
-  background-image: url(bgcity.png);
+  background-image: url(images/bgcity.png);
   position: absolute;
   width: 1440px;
   height: 499px;
   left: 0;
-  bottom: 397px;
-  display: flex;
-  top: 1914px;
+  align-items: center;
+  justify-content: center;
 }
 
-.get-in-touch h1{
-  position: absolute;
+.get-in-touch h2{
+  font-family: Open Sans Bold;
   width: 350px;
   height: 72px;
-  left: 545px;
-  top: 120px;
-  font-family: Open Sans Bold;
   font-style: normal;
   font-weight: bold;
   font-size: 30px;
@@ -338,6 +328,7 @@ body {
   text-align: center;
   letter-spacing: 0.15px;
   color: #48555B;
+  padding-bottom: 5%;
 }
 
 .get_button{
@@ -349,41 +340,18 @@ body {
   background: #00A4E5;
 }
 
-.get_button p{
-  position: absolute;
-  width: 95px;
-  height: 18px;
-  left: 29px;
-  top: -2px;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 13px;
-  /*line-height: 18px;*/
-  display: flex;
-  align-items: flex-end;
-  text-align: center;
-  letter-spacing: 0.4px;
-  color: #FFFFFF;
-}
-
 .newsletter{
   background-color:#171819;
-  position: absolute;
   width: 1440px;
   height: 100px;
   left: 0;
-  bottom: 298px;
   display: flex;
-  top: 2412px;
+  align-items: center;
 }
 
-.newsletter h1{
-  position: absolute;
+.newsletter p{
   width: 216px;
   height: 30px;
-  left: 378px;
-  top: 20%;
   font-family: Open Sans Bold;
   font-style: normal;
   font-weight: bold;
@@ -393,7 +361,7 @@ body {
   align-items: flex-end;
   text-align: center;
   letter-spacing: 0.8px;
-  color: #FFFFFF;
+  color: black;
 }
 
 .white_mail{
