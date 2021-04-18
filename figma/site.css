@@ -157,14 +157,21 @@ body {
 	align-items: center;
 }
 
-.story{
+.title{
+  letter-spacing: 2.30625px;
+  color: #48555B;
   font-family: Open Sans Bold;
   font-style: normal;
   font-size: 18px;
   line-height: 25px;
+}
+
+.title h3{
+  margin-top: 0;
+}
+
+.story{
   text-align: center;
-  letter-spacing: 2.30625px;
-  color: #48555B;
 }
 
 .line{
@@ -175,11 +182,13 @@ body {
 
 .about__text {
   padding-top: 40px;
+  padding-left: 250px;
 }
 
 .about__column {
   width: 50%;
 	justify-content: space-between;
+  align-self: center;
 }
 
 .about__title {
@@ -187,7 +196,6 @@ body {
   width: 405.08px;
   line-height: 27px;
   font-family: Open Sans Bold;
-  align-items: flex-end;
   letter-spacing: 0.1875px;
 }
 
@@ -204,14 +212,13 @@ body {
 
 .about__row{
   justify-content: center;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 250px;
   align-items: center;
 }
 
 .picture-text{
   color: black;
-	
   font-size: 24px;
   width: 68px;
 }
@@ -221,7 +228,6 @@ body {
   color: #FFFFFF;
   font-size: 24px;
   font-family: Open Sans Bold;
-  text-transform: uppercase;
   width: 140px;
   height: 224px;
   letter-spacing: 0.1875px;
@@ -243,253 +249,67 @@ body {
   margin: 15px;
 }
 
-
-
-
-
-
-
-
-
 .service{
-  position: absolute;
-  width: 940px;
   height: 446px;
-  left: 249px;
-  bottom: 1011px;
-  background-color: white;
-  top: 1353px;
+  margin-left: 250px;
+  margin-right: 250px;
+  margin-top: 117px;
+  flex-direction: column;
 }
 
-.service h1{
-  position: absolute;
- width: 198px;
- height: 25px;
- left: 0px;
- top: -1px;
- font-family: Open Sans Bold;
- font-style: normal;
- font-weight: bold;
- font-size: 18px;
- line-height: 25px;
-/* identical to box height */
- display: flex;
- align-items: flex-end;
- letter-spacing: 2px;
- color: #48555B;
-}
-
-.service p{
-  position: absolute;
-  width: 50px;
-  height: 2px;
-  left: 0px;
-  top: 34px;
-  border: 2px solid #00A4E5;
-  background-color: #00A4E5;
-}
-
-.service_button{
-  position: absolute;
-  width: 150px;
-  height: 40px;
-  left: 790px;
-  top: 0px;
-  background: #00A4E5;
-}
-
-.service_button p{
-  position: absolute;
-  width: 95px;
-  height: 18px;
-  left: 29px;
-  top: -2px;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 13px;
-  /*line-height: 18px;*/
-  display: flex;
-  align-items: flex-end;
-  text-align: center;
-  letter-spacing: 0.4px;
-  color: #FFFFFF;
-}
-
-.service h2{
-  position: absolute;
-  width: 405.4px;
-  height: 38px;
-  left: 353px;
-  top: 0px;
+.service__column{
   font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
   font-size: 11px;
-  line-height: 19px;
-
-  display: flex;
-  align-items: center;
   letter-spacing: 0.2px;
-  color: #48555B;
+  width: 405px;
+  height: 38px;
+  align-items:flex-start;
 }
 
-.service1{
-  position: absolute;
+.service__row {
+  padding: 2%;
   width: 295px;
   height: 330px;
-  left: 0px;
-  top: 116px;
-  border: 1px solid #E6E6E6;
-  box-sizing: border-box;
+  border: 1px solid #E6E6E6; 
+  color: #48555B; 
 }
 
-.paint1{
-  position: absolute;
-  width: 65.62px;
-  height: 75px;
-  left: 23px;
-  top: 38px;
-}
-
-.service1 h1 {
-  position: absolute;
-  width: 250px;
-  height: 48px;
-  left: 23px;
-  top: 138px;
-  font-family: Open Sans Bold;
-  font-style: normal;
-  font-weight: bold;
+.service__row h4{
   font-size: 16px;
   line-height: 24px;
-  display: flex;
-  align-items: center;
   letter-spacing: 0.426667px;
-  color: #48555B;
 }
 
-.service1 h2{
-  position: absolute;
-  width: 250px;
-  height: 92px;
-  left: 23px;
-  top: 199px;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
+.service__row p{
   font-size: 13px;
   line-height: 23px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.1875px;
-  color: #48555B;
-}
-
-.service2{
-  position: absolute;
-  width: 295px;
-  height: 330px;
-  left: 323px;
-  top: 116px;
-  border: 1px solid #E6E6E6;
-  box-sizing: border-box;
-}
-
-.paint2{
-  position: absolute;
-  width: 65.62px;
-  height: 75px;
-  left: 23px;
-  top: 38px;
-}
-
-.service2 h1 {
-  position: absolute;
-  width: 250px;
-  height: 48px;
-  left: 23px;
-  top: 138px;
-  font-family: Open Sans Bold;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 24px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.426667px;
-  color: #48555B;
-}
-
-.service2 h2{
-  position: absolute;
-  width: 250px;
-  height: 92px;
-  left: 23px;
-  top: 199px;
+  letter-spacing: 0.1875px;  
   font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
+}
+
+.service__button{
+  width: 150px;
+  background: #00A4E5;
+  border: transparent;
+  color: #FFFFFF;
+  font-family: Open-Sans;
   font-size: 13px;
-  line-height: 23px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.1875px;
-  color: #48555B;
+  height: 40px;
+  letter-spacing: 0.5px;
+}
+
+.flex-between{
+  justify-content: space-between; 
+  padding-bottom: 80px;
 }
 
 
-.service3{
-  position: absolute;
-  width: 295px;
-  height: 330px;
-  left: 645px;
-  top: 116px;
-  border: 1px solid #E6E6E6;
-  box-sizing: border-box;
-}
 
-.paint3{
-  position: absolute;
-  width: 65.62px;
-  height: 75px;
-  left: 23px;
-  top: 38px;
-}
 
-.service3 h1 {
-  position: absolute;
-  width: 250px;
-  height: 48px;
-  left: 23px;
-  top: 138px;
-  font-family: Open Sans Bold;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 24px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.426667px;
-  color: #48555B;
-}
 
-.service3 h2{
-  position: absolute;
-  width: 250px;
-  height: 92px;
-  left: 23px;
-  top: 199px;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 23px;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.1875px;
-  color: #48555B;
-}
+
 
 .get-in-touch{
   background-image: url(bgcity.png);
