@@ -13,6 +13,14 @@
   src: url("fonts/OpenSans-Bold.ttf");
 }
 
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+
+
 body {
 	font-family: 'Open Sans';
 	color: #48555B;
@@ -92,60 +100,52 @@ body {
 }
 .logo-black{
   color: #000000;
+  justify-content: left;
+  left: 20%;
 }
 
-
-
-
+.container {
+	width: 100%;
+  margin: 0 auto;
+  border-bottom: 1px solid #E6E6E6;
+  left: calc(50% - 1442px/2);
+}
 
 .nav_menu{
-  display: inline;
-  position: absolute;
-  width: 1445px;
   height: 65px;
-  left: 1px;
-  top: 770px;
-  background: #FFFFFF;
-  border: 1px solid #E6E6E6;
-  box-sizing: border-box;
+  max-width: 941px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  flex-direction: row;
 }
 
-.second_logo {
-  display:flex;
-  flex-direction: row;
-  color: black;
-  position: absolute;
-  height: 23px;
-  width: 130px;
-  left: 25px;
-  top: 30%;
-  font-size: 25px;
-  border-radius: 0px;
-  /*text-align: center;*/
-  font-family: BebasNeueBold;
-  letter-spacing: 0.70937px;
-}
 
 .menu_buttons{
   display:flex;
-  flex-direction: row;
-  justify-content:flex-end;
   color: #48555B;
-  font-family: Open Sans;
+  font-weight: 600;
+  font-family: Open Sans Bold;
+  line-height: 16px;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 1.09091px;
+  list-style-type: none;
+}
+
+.menu_buttons-button{
+  padding-left: 45px;
   font-style: normal;
 }
 
-nav li{
-	padding-left: 10px;
-	padding-right: 30px;
-  
+.active-button{
+  font-style: normal;
+	color: #00A4E5;
+  font-family: Open Sans Bold;
 }
 
-nav{
-	list-style: none;
-	text-transform: uppercase;
-	display: flex;
-}
+
 
 .about{
   display: inline;
