@@ -1,3 +1,49 @@
+@font-face {
+  font-family: BebasNeueBold;
+  src: url("fonts/bebas-neue-bold.ttf");
+}
+
+@font-face {
+  font-family: Open Sans;
+  src: url("fonts/OpenSans.ttf");
+}
+
+@font-face {
+  font-family: Open Sans Bold;
+  src: url("fonts/OpenSans-Bold.ttf");
+}
+
+
+.header {
+	background: no-repeat url(images/bg.png);
+	height: 769px;
+	width: 100%;
+}
+
+.flex-colum {
+	display: flex;
+	flex-direction: column;
+}
+
+.triangle {
+	border-top: 11px solid transparent;
+	border-right: 10px solid #00A4E5;
+	border-bottom: 11px solid transparent;
+	margin-right: 2.5px;
+	margin-left: 1px;
+	height: 0;
+	width: 0;
+}
+
+
+
+
+
+
+
+
+
+
 .main_conteiner{
   background: no-repeat url(bg.png);
   display:flex;
@@ -113,13 +159,6 @@
   color: #48555B;
   font-family: Open Sans;
   font-style: normal;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 1.09091px;
-  padding right: 250px;
-  top: 40%;
-  right: 10px;
 }
 
 nav li{
@@ -915,19 +954,3 @@ nav{
 
 
 
-
-
-@font-face {
-  font-family: BebasNeueBold;
-  src: url("bebas-neue-bold.ttf");
-}
-
-@font-face {
-  font-family: Open Sans;
-  src: url("OpenSans.ttf");
-}
-
-@font-face {
-  font-family: Open Sans Bold;
-  src: url("OpenSans-Bold.ttf");
-}
