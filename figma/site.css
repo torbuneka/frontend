@@ -30,7 +30,6 @@ body {
 	font-family: 'Open Sans';
 	color: #48555B;
 	font-size: 13px;
-  height: 2810px;
 }
 
 .header {
@@ -119,8 +118,8 @@ body {
 
 .nav_menu{
   height: 65px;
-  margin-right: 10%;
-  margin-left: 10%;
+  margin-right: 250px;
+  margin-left: 250px;
 	justify-content: space-between;
 	align-items: center;
 }
@@ -184,6 +183,7 @@ body {
 .about__text {
   padding-top: 40px;
   padding-left: 250px;
+  padding-right: 250px;
 }
 
 .about__column {
@@ -252,8 +252,8 @@ body {
 
 .service{
   height: 446px;
-  margin-left: 250px;
-  margin-right: 250px;
+  padding-left: 250px;
+  padding-right: 250px;
   margin-top: 117px;
   flex-direction: column;
 }
@@ -275,6 +275,7 @@ body {
   height: 330px;
   border: 1px solid #E6E6E6; 
   color: #48555B; 
+  margin-right: 20px;
 }
 
 .service__row h4{
@@ -373,10 +374,6 @@ body {
   padding-right: 250px;
 }
 
-.flex-row{
-  justify-content: space-between;
- 
-}
 
 .flex-column{
   align-items:center;
@@ -385,6 +382,7 @@ body {
 .footer-row{
   align-items: stretch;
   padding-top: 40px;
+  justify-content: space-between;
 }
 
 .footer_company {
