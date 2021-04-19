@@ -252,8 +252,8 @@ body {
 
 .service{
   height: 446px;
-  padding-left: 250px;
-  padding-right: 250px;
+  margine-left: 250px;
+  margine-right: 250px;
   margin-top: 117px;
   flex-direction: column;
 }
@@ -267,6 +267,8 @@ body {
   width: 405px;
   height: 38px;
   align-items:flex-start;
+  /*margin-left: 7%;
+  margin-right: 5%;*/
 }
 
 .service__row {
@@ -282,6 +284,7 @@ body {
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.426667px;
+  align-items:flex-start;
 }
 
 .service__row p{
@@ -296,7 +299,7 @@ body {
   background: #00A4E5;
   border: transparent;
   color: #FFFFFF;
-  font-family: Open-Sans;
+  font-family: Open Sans Bold;
   font-size: 13px;
   height: 40px;
   letter-spacing: 0.5px;
