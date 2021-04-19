@@ -307,7 +307,6 @@ body {
 
 .get-in-touch{
   background-image: url(images/bgcity.png);
-  position: absolute;
   width: 1440px;
   height: 499px;
   left: 0;
@@ -320,7 +319,6 @@ body {
   width: 350px;
   height: 72px;
   font-style: normal;
-  font-weight: bold;
   font-size: 30px;
   line-height: 36px;
   display: flex;
@@ -343,81 +341,27 @@ body {
 .newsletter{
   background-color:#171819;
   width: 1440px;
-  height: 100px;
+  height: 120px;
   left: 0;
   display: flex;
   align-items: center;
+  padding-left: 377px;
+  padding-right: 377px;
+  padding-bottom: 0;
 }
 
-.newsletter p{
-  width: 216px;
+.newsletter_title{
   height: 30px;
   font-family: Open Sans Bold;
-  font-style: normal;
-  font-weight: bold;
   font-size: 22px;
   line-height: 30px;
   display: flex;
   align-items: flex-end;
   text-align: center;
-  letter-spacing: 0.8px;
-  color: black;
-}
-
-.white_mail{
-  position: absolute;
-  width: 250px;
-  height: 40px;
-  left: 664px;
-  top: 30px;
-  background: #FFFFFF;
-  border: 1px solid #979797;
-  box-sizing: border-box;
-}
-
-.white_mail p{
-  position: absolute;
-  width: 136px;
-  height: 19px;
-  left: 10%;
-  top: -10%;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 19px;
-  display: flex;
-  align-items: flex-end;
-  letter-spacing: 0.07px;
-  color: #48555B;
-}
-
-.blue_mail{
-  position: absolute;
-  width: 150px;
-  height: 40px;
-  left: 913px;
-  top: 30px;
-  background: #00A4E5;
-}
-
-.blue_mail p{
-  position: absolute;
-  width: 52px;
-  height: 18px;
-  left: 48.5px;
-  top: 0;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 13px;
-  line-height: 18px;
-  display: flex;
-  align-items: flex-end;
-  text-align: center;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.846154px;
   color: #FFFFFF;
 }
+
 
 .footer{
   position: absolute;
