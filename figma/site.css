@@ -33,7 +33,7 @@ body {
 }
 
 .header {
-	background: no-repeat url(images/bg.png) ;
+	background: no-repeat center top / cover url(images/bg.png) ;
 	height: 769px;
 	width: 100%;
   color: #FFFFFF;
