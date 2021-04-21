@@ -75,6 +75,10 @@ VM1908: 5
 let k = l = m = 3;
 const r = o = p = 3;
 
+let k = 3;
+l = k;
+m = l;
+
 /*Присвоение значения */
 var c=15;
 var d = 2;
