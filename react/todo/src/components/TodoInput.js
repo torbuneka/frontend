@@ -9,9 +9,6 @@ export default class TodoInput extends Component {
                 <form onSubmit={handleSubmit}>
                     <div className="input-group">
                         <div className="input-group-prepend">
-                            <div className="input-group-text bg-info text-white">
-                                <i className="fas fa-book" />
-                            </div>
                         </div>
 
                         <input

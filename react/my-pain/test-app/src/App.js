@@ -6,7 +6,7 @@ import TaskForm from './Components/TaskForm';
 function App() {
 
   const [error, setError] = useState(null);
-  const [tasks, setTasks] = useState([
+  const [tasks, setTasks] = useState([/*
     {
       "id": 1,
       "sequence": 1,
@@ -24,14 +24,14 @@ function App() {
       "title": "Task 3",
       "id": 3,
       "sequence": 3
-    }
+    }*/
   ]);
 
-  /*useEffect(() => {
+  useEffect(() => {
     axios.get("http://185.246.66.84:3000/etorbunova/tasks")
     .then(res => setTasks(res.data))
     .catch(err => setError(err))
-  },[])*/
+  },[])
 
   return (
     <>

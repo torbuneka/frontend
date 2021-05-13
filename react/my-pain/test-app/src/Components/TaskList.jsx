@@ -8,7 +8,7 @@ function TaskList({tasks, completedTasks}){
         <div className="task__list">
             <ul>
                 {arr.map(task => {
-                    return (<Task key={task.id} task={task}/>)
+                    return (<Task key={task.id} task={tasks}/>)
                     })}
             </ul>
         </div>

@@ -42,11 +42,11 @@ class App extends Component {
 		}
 	}
 
-	updateTodosToShow = string => {
+	/*updateTodosToShow = string => {
 		this.setState({
 			itemsToShow: string
 		});
-	};
+	};*/
 
 	handleDoneTask = (id, completed) => {
 		const filteredItems = this.state.items.map(item => {
@@ -80,30 +80,16 @@ class App extends Component {
 		})
 	}
 
-	handleDeleteDoneTasks = () => {
-		const filteredItems = this.state.items.filter(item => item.completed === false)
-
-		this.setState({
-			items: filteredItems
-		})
-	}
-
-	clearList = () => {
-		this.setState({
-			items: []
-		})
-	}
-
 	render() {
 		let items = []
 
 		if (this.state.itemsToShow === "all") {
 			items = this.state.items;
-		} else if (this.state.itemsToShow === "todo") {
+		} /*else if (this.state.itemsToShow === "todo") {
 			items = this.state.items.filter(item => !item.completed);
 		} else if (this.state.itemsToShow === "done") {
 			items = this.state.items.filter(item => item.completed);			
-		}
+		}*/
 
 		return (
 			<div className="container">
@@ -118,11 +104,9 @@ class App extends Component {
 						<TodoList
 							items={items}
 							filterDoneTasks={this.filterDoneTasks}
-							clearList={this.clearList}
 							handleDelete={this.handleDelete}
 							handleEdit={this.handleEdit}
 							handleDoneTask={this.handleDoneTask}
-							handleDeleteDoneTasks={this.handleDeleteDoneTasks}
 							updateTodosToShow={this.updateTodosToShow}
 						/>
 					</div>
