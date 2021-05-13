@@ -35,8 +35,12 @@ function App() {
 
   return (
     <>
-      <TaskForm tasksArr={tasks} showCompletedTasks={true}/>
-      <TaskForm tasksArr={tasks} showCompletedTasks={false}/>
+      <div>
+        <TaskForm tasksArr={tasks} showCompletedTasks={true}/>
+      </div>
+      <div>
+        <TaskForm tasksArr={tasks} showCompletedTasks={false}/>
+      </div>
     </>
   );
 }

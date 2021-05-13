@@ -1,46 +1,58 @@
-@font-face {
-  font-family: Poliphile;
-  src: url('fonts/Poliphile.ttf');
-}
-
 .App {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
+  color: rgb(20, 19, 19);
 }
 
 .App-header {
-  background-color: #a359b6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(20, 19, 19);
 }
 
 .App-link {
   color: #61dafb;
 }
 
-.CreateTask{
-  text-decoration: none;
-  display: inline-block;
-  color: white;
-  padding: 20px 30px;
-  margin: 10px 20px;
-  border-radius: 10px;
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: 2px;
-  background-image: linear-gradient(to right, #c611eb 0%, #a138ca 51%, #ef9edb 100%);
-  background-size: 200% auto;
-  box-shadow: 0 0 20px rgba(216, 203, 203, 0.562);
-  transition: .5s;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
+.task__list{
+  border: 2px black;
+  width: 300px
 }
 
-.TakeDataTask{
-  
+.task__form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.createButton{
+  display: flex;
+  justify-content: center;
+}
+
+.task{
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
+
+.active{
+    border: 2px double green;
+}
+.completed{
+    border: 2px double red;
+}
+.checkbox{
+    text-decoration: line-through;
+}
+.input{
+    border: 0px
+}
+.inputLineThrough{
+    text-decoration: line-through
 }
