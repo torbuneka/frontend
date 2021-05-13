@@ -15,7 +15,6 @@ export default class TodoList extends Component {
                 <h3 className="text-center">
                     TodoList
                 </h3>
-                <div></div>
                 {
                 items.length === 0 ? '' :
                     <ul className="list-group my-5">
