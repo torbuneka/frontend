@@ -1,25 +1,21 @@
 import {useEffect, useState} from 'react';
-import axios from 'axios';
 
-function TakeDataTask(props) {
-  
-    const [tasks, setTask] = useState([]);
-    const [error, setError] = useState(null);
+function Task({task}){
     
-    useEffect(() => {
-        axios.get(props.address)
-        .then(res => setTask(res.data))
-        .catch(err => setError(err))
-    },[])
-  
-   
-    return (
-      <div className="allTask">
-            <ul>
-                 {tasks.map(task => (<li key={task.id}>{task.title}</li>))}
-            </ul>
+  return (
+      <div className="task">
+          <div>
+              <input  type="checkbox" defaultChecked={task.completed}/>
+              <input className="task_complete" type="text" value={task.title} />
+          </div>
+          <div>
+              {task.completed && <button>restore</button>}
+              {!task.completed && <button>edit</button>}
+              {!task.completed && <button>delete</button>}
+          </div>
       </div>
-    );
-}
+  );
   
-export default TakeDataTask;
+}
+
+export default Task;
