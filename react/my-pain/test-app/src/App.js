@@ -42,19 +42,9 @@ function App() {
       })
       .catch(error => console.log(error));
   }  
-
-  /*const deleteTask = useCallback((id) => {
-      axios.delete("http://185.246.66.84:3000/etorbunova/tasks/" + id)
-      .then(response => {
-          setTasks(prev => prev.filter(curr => curr.id !== id)
-          );
-      })
-      .catch(error => console.log(error));
-  },[setTasks])  */
   
-
-  const checkboxDone = useCallback((task) => {
-      axios.put("http://185.246.66.84:3000/etorbunova/tasks/" + task.id, {
+  function checkboxDone(task){
+    axios.put("http://185.246.66.84:3000/etorbunova/tasks/" + task.id, {
           completed: !task.completed,
           title: task.title,
           sequence: task.sequence           
@@ -65,8 +55,7 @@ function App() {
           });
       })
       .catch(error => console.log(error));
-  },[setTasks])
-  
+  }
   
   const renameTask = useCallback((task, newTitle) => {
       console.log("http://185.246.66.84:3000/etorbunova/tasks/" + task.id);
@@ -94,7 +83,7 @@ function App() {
         <TaskForm tasksArr={tasks} showCompletedTasks={true} addButtonClick={CreateTask} deleteButtonClick={deleteTask} editButtonClick={renameTask} checkboxDone={checkboxDone}/>
       </div>
       <div>
-        <TaskForm tasksArr={tasks} showCompletedTasks={false} addButtonClick={CreateTask}/>
+        <TaskForm tasksArr={tasks} showCompletedTasks={false} addButtonClick={CreateTask} checkboxDone={checkboxDone}/>
       </div>
     </>
   );
