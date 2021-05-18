@@ -1,6 +1,6 @@
 import Task from "./Tasks";
 
-function TaskList({tasks, completedTasks}){
+function TaskList({tasks, completedTasks, editButtonClick, deleteButtonClick, checkboxDone}){
 
     var arr = !completedTasks ? tasks.filter(task => task.completed) : tasks.filter(task =>!task.completed); 
     
@@ -8,7 +8,7 @@ function TaskList({tasks, completedTasks}){
         <div className="task__list">
             <ul>
                 {arr.map(task => {
-                    return (<Task key={task.id} task={tasks}/>)
+                    return (<Task key={task.id} task={task} deleteButtonClick={deleteButtonClick} editButtonClick={editButtonClick} checkboxDone={checkboxDone}/>)
                     })}
             </ul>
         </div>

@@ -1,12 +1,113 @@
 import './App.css';
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import axios from 'axios'
 import TaskForm from './Components/TaskForm';
 
 function App() {
 
   const [error, setError] = useState(null);
-  const [tasks, setTasks] = useState([/*
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://185.246.66.84:3000/etorbunova/tasks")
+    .then(res => setTasks(res.data))
+    .catch(err => setError(err))
+  },[])
+
+  function calcSequence(){
+    return tasks.length + 2;
+  }
+
+  const CreateTask = useCallback(() => {
+    
+    const newTask = {
+        completed: false,
+        title: tasks.length === 0 ? "Task 1" : "Task " + (tasks.length + 1),
+        sequence: calcSequence()
+    }
+    axios.post("http://185.246.66.84:3000/etorbunova/tasks", newTask)
+    .then(response => {
+        setTasks(prev =>
+            [...prev,response.data]
+        );
+    })
+    .catch(error => console.log(error));
+  },[tasks, setTasks]) 
+  
+  function deleteTask(id){
+    axios.delete("http://185.246.66.84:3000/etorbunova/tasks/" + id)
+      .then(response => {
+          setTasks(prev => prev.filter(curr => curr.id !== id)
+          );
+      })
+      .catch(error => console.log(error));
+  }  
+
+  /*const deleteTask = useCallback((id) => {
+      axios.delete("http://185.246.66.84:3000/etorbunova/tasks/" + id)
+      .then(response => {
+          setTasks(prev => prev.filter(curr => curr.id !== id)
+          );
+      })
+      .catch(error => console.log(error));
+  },[setTasks])  */
+  
+
+  const checkboxDone = useCallback((task) => {
+      axios.put("http://185.246.66.84:3000/etorbunova/tasks/" + task.id, {
+          completed: !task.completed,
+          title: task.title,
+          sequence: task.sequence           
+      })
+      .then(response => {
+          setTasks(prev =>{
+              return [...prev.filter(curr => curr.id !== task.id),response.data]
+          });
+      })
+      .catch(error => console.log(error));
+  },[setTasks])
+  
+  
+  const renameTask = useCallback((task, newTitle) => {
+      console.log("http://185.246.66.84:3000/etorbunova/tasks/" + task.id);
+      if (task.title !== newTitle){
+          axios.put("http://185.246.66.84:3000/etorbunova/tasks/" + task.id, {
+              completed: task.completed,
+              title: newTitle,
+              sequence: task.sequence           
+          })
+          .then(response => {
+              setTasks(prev =>{
+                  return [...prev.filter(curr => curr.id !== task.id),response.data]
+              });
+          })
+          .catch(error => console.log(error));
+      }
+      
+  },[setTasks])   
+
+
+
+  return (
+    <>
+      <div>
+        <TaskForm tasksArr={tasks} showCompletedTasks={true} addButtonClick={CreateTask} deleteButtonClick={deleteTask} editButtonClick={renameTask} checkboxDone={checkboxDone}/>
+      </div>
+      <div>
+        <TaskForm tasksArr={tasks} showCompletedTasks={false} addButtonClick={CreateTask}/>
+      </div>
+    </>
+  );
+}
+
+export default App;
+
+
+
+
+
+
+/*
     {
       "id": 1,
       "sequence": 1,
@@ -25,47 +126,3 @@ function App() {
       "id": 3,
       "sequence": 3
     }*/
-  ]);
-
-  useEffect(() => {
-    axios.get("http://185.246.66.84:3000/etorbunova/tasks")
-    .then(res => setTasks(res.data))
-    .catch(err => setError(err))
-  },[])
-
- 
-
-
-  return (
-    <>
-      <div>
-        <TaskForm tasksArr={tasks} showCompletedTasks={true}/>
-      </div>
-      <div>
-        <TaskForm tasksArr={tasks} showCompletedTasks={false}/>
-      </div>
-    </>
-  );
-}
-
-export default App;
-
-
-
-
-
-
-
-
-/*
-        <TakeDataTask address="http://185.246.66.84:3000/etorbunova/tasks" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-*/
