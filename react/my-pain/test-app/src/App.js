@@ -95,7 +95,7 @@ function App() {
           sequence: task.sequence           
       })
       .then(response => {
-          setTasks(prev =>{
+        setSubtasks(prev =>{
               return [...prev.filter(curr => curr.id !== task.id),response.data]
           });
       })
@@ -103,8 +103,6 @@ function App() {
   }
 
 
-
-  
   const renameTask = useCallback((task, newTitle) => {
       console.log("http://185.246.66.84:3000/etorbunova/tasks/" + task.id);
       if (task.title !== newTitle){
@@ -115,13 +113,29 @@ function App() {
           })
           .then(response => {
               setTasks(prev =>{
-                  return [...prev.filter(curr => curr.id !== task.id),response.data]
-              });
+                  return [...prev.filter(curr => curr.id !== task.id),response.data]});
           })
           .catch(error => console.log(error));
       }
-      
   },[setTasks])   
+
+  const renameSubtask = useCallback((task, newTitle) => {
+    console.log("http://185.246.66.84:3000/etorbunova/tasks/" + task.id);
+    if (task.title !== newTitle){
+        axios.put("http://185.246.66.84:3000/etorbunova/tasks/" + task.id, {
+            completed: task.completed,
+            title: newTitle,
+            sequence: task.sequence           
+        })
+        .then(response => {
+          setSubtasks(prev =>{
+                return [...prev.filter(curr => curr.id !== task.id),response.data]});
+        })
+        .catch(error => console.log(error));
+    }
+},[setSubtasks])  
+
+
 
 
 
@@ -129,7 +143,7 @@ function App() {
     <TaskContext.Provider value={[tasks, setTasks]}>
       <SubtaskContext.Provider value={[subtasks, setSubtasks]}>
       <div>
-      <TaskForm tasksArr={tasks} showCompletedTasks={true} addButtonClick={CreateTask} deleteButtonClick={deleteTask} editButtonClick={renameTask} checkboxDone={checkboxDone} CreateSubtask={CreateSubtask} deleteSubtask={deleteSubtask} checkboxSubtask={checkboxSubtask}/>
+        <TaskForm tasksArr={tasks} showCompletedTasks={true} addButtonClick={CreateTask} deleteButtonClick={deleteTask} editButtonClick={renameTask} checkboxDone={checkboxDone} CreateSubtask={CreateSubtask} deleteSubtask={deleteSubtask} checkboxSubtask={checkboxSubtask} renameSubtask={renameSubtask}/>
       </div>
       <div>
         <TaskForm tasksArr={tasks} showCompletedTasks={false} addButtonClick={CreateTask} checkboxDone={checkboxDone}/>

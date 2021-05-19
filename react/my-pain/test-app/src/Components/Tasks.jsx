@@ -22,7 +22,7 @@ const styles = {
 
 }
 
-function Task({task, deleteButtonClick, editButtonClick, checkboxDone}){
+function Task({task, deleteButtonClick, editButtonClick, checkboxDone, CreateSubtask, deleteSubtask, checkboxSubtask, renameSubtask}){
     var title = task.title;
     const [readOnly, setReadOnly] = useState(true);
     const [editValue, setEditValue] = useState(task.title);
@@ -51,7 +51,7 @@ function Task({task, deleteButtonClick, editButtonClick, checkboxDone}){
                 {!task.completed && <button style={styles.delete} onClick={() => deleteButtonClick(task.id)}>delete</button>}
             </div>
             <div>
-                <SubtaskList taskId ={task.id}/>
+                <SubtaskList taskId ={task.id} CreateSubtask={CreateSubtask} deleteSubtask={deleteSubtask} checkboxSubtask={checkboxSubtask} renameSubtask={renameSubtask} />
             </div>
         </div>
     </div>

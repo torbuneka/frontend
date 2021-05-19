@@ -21,14 +21,14 @@ const styles = {
 }
 
 
-function TaskForm({tasksArr, subtask,  showCompletedTasks, addButtonClick, deleteButtonClick, editButtonClick, checkboxDone}){
+function TaskForm({tasksArr, subtask,  showCompletedTasks, addButtonClick, deleteButtonClick, editButtonClick, checkboxDone, CreateSubtask, deleteSubtask, checkboxSubtask, renameSubtask}){
     return (
         <div className="task__form" style={styles.form}>
             <div class="task__list">
             {showCompletedTasks && <div className="createButton"><button style={styles.createButton} onClick={addButtonClick}>Create task</button></div>}
                 <div><h2 style={styles.form}>{!showCompletedTasks ? "Done tasks" : "Active tasks"}</h2></div>
             </div>
-            <TaskList tasks={tasksArr} subtask={subtask}  completedTasks={showCompletedTasks} deleteButtonClick={deleteButtonClick} editButtonClick={editButtonClick} checkboxDone={checkboxDone}/>
+            <TaskList tasks={tasksArr} subtask={subtask}  completedTasks={showCompletedTasks} deleteButtonClick={deleteButtonClick} editButtonClick={editButtonClick} checkboxDone={checkboxDone} CreateSubtask={CreateSubtask} deleteSubtask={deleteSubtask} checkboxSubtask={checkboxSubtask} renameSubtask={renameSubtask}/>
         </div>
     );
 }
