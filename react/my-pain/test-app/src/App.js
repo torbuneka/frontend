@@ -26,7 +26,6 @@ function App() {
   }
 
   const CreateTask = useCallback(() => {
-    
     const newTask = {
         completed: false,
         title: tasks.length === 0 ? "Task 1" : "Task " + (tasks.length + 1),
@@ -37,19 +36,44 @@ function App() {
         setTasks(prev =>
             [...prev,response.data]
         );
+    }).catch(error => console.log(error));
+  },[tasks, setTasks]) 
+
+
+
+  const CreateSubtask = useCallback((id) => {
+    const newSubtask = {
+        completed: false,
+        sequence: subtasks.length + 2,
+        taskId: id,
+        title: "Subtask for Task" + id
+    }
+    axios.post("http://185.246.66.84:3000/etorbunova/subtasks", newSubtask)
+    .then(response => {
+        setSubtasks(prev =>
+            [...prev, response.data]
+        );
     })
     .catch(error => console.log(error));
-  },[tasks, setTasks]) 
-  
+  },[subtasks, setSubtasks])
+
+
   function deleteTask(id){
     axios.delete("http://185.246.66.84:3000/etorbunova/tasks/" + id)
       .then(response => {
-          setTasks(prev => prev.filter(curr => curr.id !== id)
-          );
+          setTasks(prev => prev.filter(curr => curr.id !== id));
       })
       .catch(error => console.log(error));
   }  
-  
+
+  function deleteSubtask(id){
+    axios.delete("http://185.246.66.84:3000/etorbunova/subtasks/" + id)
+      .then(response => {
+        setSubtasks(prev => prev.filter(curr => curr.id !== id));
+      })
+      .catch(error => console.log(error));
+  }  
+
   function checkboxDone(task){
     axios.put("http://185.246.66.84:3000/etorbunova/tasks/" + task.id, {
           completed: !task.completed,
@@ -63,6 +87,23 @@ function App() {
       })
       .catch(error => console.log(error));
   }
+
+  function checkboxSubtask(task){
+    axios.put("http://185.246.66.84:3000/etorbunova/subtasks/" + task.id, {
+          completed: !task.completed,
+          title: task.title,
+          sequence: task.sequence           
+      })
+      .then(response => {
+          setTasks(prev =>{
+              return [...prev.filter(curr => curr.id !== task.id),response.data]
+          });
+      })
+      .catch(error => console.log(error));
+  }
+
+
+
   
   const renameTask = useCallback((task, newTitle) => {
       console.log("http://185.246.66.84:3000/etorbunova/tasks/" + task.id);
@@ -88,7 +129,7 @@ function App() {
     <TaskContext.Provider value={[tasks, setTasks]}>
       <SubtaskContext.Provider value={[subtasks, setSubtasks]}>
       <div>
-        <TaskForm tasksArr={tasks} showCompletedTasks={true} addButtonClick={CreateTask} deleteButtonClick={deleteTask} editButtonClick={renameTask} checkboxDone={checkboxDone}/>
+      <TaskForm tasksArr={tasks} showCompletedTasks={true} addButtonClick={CreateTask} deleteButtonClick={deleteTask} editButtonClick={renameTask} checkboxDone={checkboxDone} CreateSubtask={CreateSubtask} deleteSubtask={deleteSubtask} checkboxSubtask={checkboxSubtask}/>
       </div>
       <div>
         <TaskForm tasksArr={tasks} showCompletedTasks={false} addButtonClick={CreateTask} checkboxDone={checkboxDone}/>

@@ -1,7 +1,9 @@
-import {useEffect, useState} from 'react';
+import {useContext, useEffect, useState} from 'react';
+import SubtaskList from './SubtaskList';
+import SubtaskContext from '../SubtaskContext'
 
 const styles = {
-    items:{
+    task:{
         display: 'flex',
         flexDirection: 'row'
     },
@@ -24,6 +26,7 @@ function Task({task, deleteButtonClick, editButtonClick, checkboxDone}){
     var title = task.title;
     const [readOnly, setReadOnly] = useState(true);
     const [editValue, setEditValue] = useState(task.title);
+    const [subtasks] = useContext(SubtaskContext);
 
     const handleEdit = (task) => {
         setReadOnly(false);
@@ -36,7 +39,7 @@ function Task({task, deleteButtonClick, editButtonClick, checkboxDone}){
     }
     
   return (
-    <div style={styles.items}>
+    <div style={styles.task}>
         <div className="Task" >
             <div>
                 <input className="checkbox" type="checkbox" defaultChecked={task.completed} disabled={task.completed} onChange={() => checkboxDone(task)}/>
@@ -46,6 +49,9 @@ function Task({task, deleteButtonClick, editButtonClick, checkboxDone}){
                 {task.completed && <button style={styles.button} onClick={() => checkboxDone(task)} >restore</button>}
                 {!task.completed && <button style={styles.button} onClick={() => {handleEdit(task)}}>save changes</button>}
                 {!task.completed && <button style={styles.delete} onClick={() => deleteButtonClick(task.id)}>delete</button>}
+            </div>
+            <div>
+                <SubtaskList taskId ={task.id}/>
             </div>
         </div>
     </div>
