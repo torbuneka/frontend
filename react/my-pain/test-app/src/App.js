@@ -2,6 +2,8 @@ import './App.css';
 import { useState, useEffect, useCallback } from 'react'
 import axios from 'axios'
 import TaskForm from './Components/TaskForm';
+import SubtaskContext from './SubtaskContext' ;
+import TaskContext from './TaskContext' ;
 
 function App() {
 
@@ -83,14 +85,16 @@ function App() {
 
 
   return (
-    <>
+    <TaskContext.Provider value={[tasks, setTasks]}>
+      <SubtaskContext.Provider value={[subtasks, setSubtasks]}>
       <div>
-        <TaskForm tasksArr={tasks} subtask={subtasks}  showCompletedTasks={true} addButtonClick={CreateTask} deleteButtonClick={deleteTask} editButtonClick={renameTask} checkboxDone={checkboxDone}/>
+        <TaskForm tasksArr={tasks} showCompletedTasks={true} addButtonClick={CreateTask} deleteButtonClick={deleteTask} editButtonClick={renameTask} checkboxDone={checkboxDone}/>
       </div>
       <div>
-        <TaskForm tasksArr={tasks} subtask={subtasks}  showCompletedTasks={false} addButtonClick={CreateTask} checkboxDone={checkboxDone}/>
+        <TaskForm tasksArr={tasks} showCompletedTasks={false} addButtonClick={CreateTask} checkboxDone={checkboxDone}/>
       </div>
-    </>
+      </SubtaskContext.Provider>
+    </TaskContext.Provider>
   );
 }
 

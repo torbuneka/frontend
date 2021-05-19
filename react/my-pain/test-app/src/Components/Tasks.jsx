@@ -37,7 +37,7 @@ function Task({task, deleteButtonClick, editButtonClick, checkboxDone}){
     
   return (
     <div style={styles.items}>
-        <div className="Task" style={task.completed? styles.completed : styles.active}>
+        <div className="Task" >
             <div>
                 <input className="checkbox" type="checkbox" defaultChecked={task.completed} disabled={task.completed} onChange={() => checkboxDone(task)}/>
                 <input className={"input",{"inputLineThrough":task.completed}} type="text" value={editValue} onChange={e => setEditValue(e.target.value)}/>
