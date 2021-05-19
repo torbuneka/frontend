@@ -1,6 +1,4 @@
 import TaskList from "./TaskList";
-/*import styles from "../styles/TaskForm.module.sass"*/
-import {nanoid} from 'nanoid';
 import {useState, useEffect } from 'react'
 
 const styles = {
@@ -13,6 +11,7 @@ const styles = {
     createButton: {
         marginTop: '10px',
         display: 'flex',
+        justifyContent: 'center',
         border: '2px solid green',
         padding: '10px',
         height:'45px',

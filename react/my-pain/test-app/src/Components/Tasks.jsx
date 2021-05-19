@@ -1,5 +1,4 @@
 import {useEffect, useState} from 'react';
-/*import styles from "../styles/Task.module.css"*/
 
 const styles = {
     items:{
@@ -43,7 +42,7 @@ function Task({task, deleteButtonClick, editButtonClick, checkboxDone}){
                 <input className="checkbox" type="checkbox" defaultChecked={task.completed} disabled={task.completed} onChange={() => checkboxDone(task)}/>
                 <input className={"input",{"inputLineThrough":task.completed}} type="text" value={editValue} onChange={e => setEditValue(e.target.value)}/>
             </div>
-            <div>
+            <div className="ChangeButtons">
                 {task.completed && <button style={styles.button} onClick={() => checkboxDone(task)} >restore</button>}
                 {!task.completed && <button style={styles.button} onClick={() => {handleEdit(task)}}>save changes</button>}
                 {!task.completed && <button style={styles.delete} onClick={() => deleteButtonClick(task.id)}>delete</button>}
