@@ -7,10 +7,15 @@ function App() {
 
   const [error, setError] = useState(null);
   const [tasks, setTasks] = useState([]);
+  const [subtasks, setSubtasks] = useState([]);
 
   useEffect(() => {
     axios.get("http://185.246.66.84:3000/etorbunova/tasks")
     .then(res => setTasks(res.data))
+    .catch(err => setError(err))
+
+    axios.get("http://185.246.66.84:3000/etorbunova/subtasks")
+    .then(res => setSubtasks(res.data))
     .catch(err => setError(err))
   },[])
 
@@ -80,10 +85,10 @@ function App() {
   return (
     <>
       <div>
-        <TaskForm tasksArr={tasks} showCompletedTasks={true} addButtonClick={CreateTask} deleteButtonClick={deleteTask} editButtonClick={renameTask} checkboxDone={checkboxDone}/>
+        <TaskForm tasksArr={tasks} subtask={subtasks}  showCompletedTasks={true} addButtonClick={CreateTask} deleteButtonClick={deleteTask} editButtonClick={renameTask} checkboxDone={checkboxDone}/>
       </div>
       <div>
-        <TaskForm tasksArr={tasks} showCompletedTasks={false} addButtonClick={CreateTask} checkboxDone={checkboxDone}/>
+        <TaskForm tasksArr={tasks} subtask={subtasks}  showCompletedTasks={false} addButtonClick={CreateTask} checkboxDone={checkboxDone}/>
       </div>
     </>
   );

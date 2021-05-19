@@ -45,7 +45,7 @@ function Task({task, deleteButtonClick, editButtonClick, checkboxDone}){
             </div>
             <div>
                 {task.completed && <button style={styles.button} onClick={() => checkboxDone(task)} >restore</button>}
-                {!task.completed && <button style={styles.button} onClick={() => {handleEdit(task)}} >edit</button>}
+                {!task.completed && <button style={styles.button} onClick={() => {handleEdit(task)}}>save changes</button>}
                 {!task.completed && <button style={styles.delete} onClick={() => deleteButtonClick(task.id)}>delete</button>}
             </div>
         </div>

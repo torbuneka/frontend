@@ -13,20 +13,23 @@ const styles = {
     createButton: {
         marginTop: '10px',
         display: 'flex',
-        border: '2px solid green' ,
-        padding: '10px'
+        border: '2px solid green',
+        padding: '10px',
+        height:'45px',
+        width:'200px',
+        background: 'green'
     }
 }
 
 
-function TaskForm({tasksArr, showCompletedTasks, addButtonClick, deleteButtonClick, editButtonClick, checkboxDone}){
+function TaskForm({tasksArr, subtask,  showCompletedTasks, addButtonClick, deleteButtonClick, editButtonClick, checkboxDone}){
     return (
         <div className="task__form" style={styles.form}>
             <div class="task__list">
-            {showCompletedTasks && <div className="createButton" style={styles.createButton}><button onClick={addButtonClick}>Create task</button></div>}
-                <div><h2 style={styles.form}>{!showCompletedTasks ? "Done" : "Active"}</h2></div>
+            {showCompletedTasks && <div className="createButton"><button style={styles.createButton} onClick={addButtonClick}>Create task</button></div>}
+                <div><h2 style={styles.form}>{!showCompletedTasks ? "Done tasks" : "Active tasks"}</h2></div>
             </div>
-            <TaskList tasks={tasksArr} completedTasks={showCompletedTasks} deleteButtonClick={deleteButtonClick} editButtonClick={editButtonClick} checkboxDone={checkboxDone}/>
+            <TaskList tasks={tasksArr} subtask={subtask}  completedTasks={showCompletedTasks} deleteButtonClick={deleteButtonClick} editButtonClick={editButtonClick} checkboxDone={checkboxDone}/>
         </div>
     );
 }

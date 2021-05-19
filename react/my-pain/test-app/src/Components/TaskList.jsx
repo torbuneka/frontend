@@ -1,5 +1,7 @@
 import Task from "./Tasks";
 
+
+
 function TaskList({tasks, completedTasks, editButtonClick, deleteButtonClick, checkboxDone}){
 
     var arr = !completedTasks ? tasks.filter(task => task.completed) : tasks.filter(task =>!task.completed); 
