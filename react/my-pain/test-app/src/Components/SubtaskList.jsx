@@ -11,7 +11,7 @@ function SubtaskList({subtask, CreateSubtask, deleteSubtask, checkboxSubtask, re
 
     return (
         <div>
-            {arrSubt.map( subtask =>  <Subtask key={subtask.id} subtask={subtask} CreateSubtask={CreateSubtask} deleteSubtask={deleteSubtask} checkboxSubtask={checkboxSubtask} renameSubtask={renameSubtask} />)}
+            {arrSubt.map(subtask => <Subtask key={subtask.id} subtask={subtask} CreateSubtask={CreateSubtask} deleteSubtask={deleteSubtask} checkboxSubtask={checkboxSubtask} renameSubtask={renameSubtask} />)}
         </div>
     )
 }

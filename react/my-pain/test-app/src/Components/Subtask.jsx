@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 
 function Subtask({subtask, deleteSubtask, checkboxSubtask, renameSubtask}) {
-    const [readOnly, setReadOnly] = useState(true);
+    /*const [readOnly, setReadOnly] = useState(true);*/
 
     return (
         <div className="Subtask">
