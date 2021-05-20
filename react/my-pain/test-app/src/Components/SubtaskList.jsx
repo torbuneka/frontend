@@ -7,11 +7,11 @@ function SubtaskList({subtask, CreateSubtask, deleteSubtask, checkboxSubtask, re
     const [tasks] = useContext(TaskContext);
     const [subtasks] = useContext(SubtaskContext);
 
-    /* надо сделать сортировку по ид такса, чем бы еще заняться в 2 часа ночи */
+    const arrSubt = subtasks.filter(subtask => subtask.taskId === tasks.id);
 
     return (
         <div>
-            <Subtask key={subtask.id} subtask={subtask} CreateSubtask={CreateSubtask} deleteSubtask={deleteSubtask} checkboxSubtask={checkboxSubtask} renameSubtask={renameSubtask} />
+            {arrSubt.map(   <Subtask key={subtask.id} subtask={subtask} CreateSubtask={CreateSubtask} deleteSubtask={deleteSubtask} checkboxSubtask={checkboxSubtask} renameSubtask={renameSubtask} />)}
         </div>
     )
 }
