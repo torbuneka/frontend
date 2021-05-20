@@ -46,7 +46,7 @@ function App() {
         completed: false,
         sequence: subtasks.length + 2,
         taskId: id,
-        title: "Subtask for Task" + id
+        title: "Subtask for current Task" 
     }
     axios.post("http://185.246.66.84:3000/etorbunova/subtasks", newSubtask)
     .then(response => {
@@ -92,7 +92,8 @@ function App() {
     axios.put("http://185.246.66.84:3000/etorbunova/subtasks/" + task.id, {
           completed: !task.completed,
           title: task.title,
-          sequence: task.sequence           
+          sequence: task.sequence,
+          taskId: task.taskId                
       })
       .then(response => {
         setSubtasks(prev =>{
@@ -120,12 +121,12 @@ function App() {
   },[setTasks])   
 
   const renameSubtask = useCallback((task, newTitle) => {
-    console.log("http://185.246.66.84:3000/etorbunova/tasks/" + task.id);
     if (task.title !== newTitle){
-        axios.put("http://185.246.66.84:3000/etorbunova/tasks/" + task.id, {
+        axios.put("http://185.246.66.84:3000/etorbunova/subtasks/" + task.id, {
             completed: task.completed,
             title: newTitle,
-            sequence: task.sequence           
+            sequence: task.sequence,
+            taskId: task.taskId           
         })
         .then(response => {
           setSubtasks(prev =>{

@@ -5,7 +5,7 @@ import SubtaskContext from '../SubtaskContext'
 const styles = {
     task:{
         display: 'flex',
-        flexDirection: 'row'
+        /*flexDirection: 'row'*/
     },
     checkbox:{
         textDecoration: 'line-through'
@@ -39,7 +39,7 @@ function Task({task, deleteButtonClick, editButtonClick, checkboxDone, CreateSub
     }
     
   return (
-    <div style={styles.task}>
+    <div style={styles.task} className="BigTask">
         <div className="Task" >
             <div>
                 <input className="checkbox" type="checkbox" defaultChecked={task.completed} disabled={task.completed} onChange={() => checkboxDone(task)}/>
@@ -51,10 +51,11 @@ function Task({task, deleteButtonClick, editButtonClick, checkboxDone, CreateSub
                 {!task.completed && <button style={styles.button} onClick={() => {handleEdit(task)}}>save changes</button>}
                 {!task.completed && <button style={styles.delete} onClick={() => deleteButtonClick(task.id)}>delete</button>}
             </div>
-            <div>
-                <SubtaskList taskId ={task.id} CreateSubtask={CreateSubtask} deleteSubtask={deleteSubtask} checkboxSubtask={checkboxSubtask} renameSubtask={renameSubtask} />
-            </div>
         </div>
+        <div className="Task">
+            <SubtaskList taskId ={task.id} CreateSubtask={CreateSubtask} deleteSubtask={deleteSubtask} checkboxSubtask={checkboxSubtask} renameSubtask={renameSubtask} />
+        </div>
+        
     </div>
     );
   

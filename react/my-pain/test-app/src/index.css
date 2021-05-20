@@ -15,9 +15,24 @@ code {
 .Task {
   display: flex;
   flex-direction: row;
+  margin-top: 2px;
+  padding: 2px;
+}
+
+.Subtask{
+  display: flex;
+  flex-direction: row;
+  margin-top: 2px;
+  padding: 2px;
+  margin-left: 20px;
+}
+
+.BigTask{
   border: 2px solid black;
   margin-top: 2px;
   padding: 2px;
+  display: flex;
+  flex-direction: column;
 }
 
 .ChangeButtons{
