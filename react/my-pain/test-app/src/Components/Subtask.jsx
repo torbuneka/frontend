@@ -30,7 +30,7 @@ function Subtask({subtask, task, deleteSubtask, checkboxSubtask, renameSubtask})
     return (
         <div className="Subtask">
             <div>
-                <input className="checkbox" type="checkbox" defaultChecked={subtask.completed} disabled={subtask.completed || task.completed} onChange={() => checkboxSubtask(subtask)}/>
+                <input className="checkbox" type="checkbox" checked={subtask.completed} disabled={subtask.completed || task.completed} onChange={() => checkboxSubtask(subtask)}/>
                 <input className={"input",{"inputLineThrough":subtask.completed}} type="text" value={editValue} disabled={subtask.completed || task.completed} onChange={e => setEditValue(e.target.value)}/>
             </div>
             <div className="ChangeButtons">
