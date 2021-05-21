@@ -43,7 +43,7 @@ function Task({task, deleteButtonClick, editButtonClick, checkboxDone, CreateSub
         <div className="Task" >
             <div>
                 <input className="checkbox" type="checkbox" defaultChecked={task.completed} disabled={task.completed} onChange={() => checkboxDone(task)}/>
-                <input className={"input",{"inputLineThrough":task.completed}} type="text" value={editValue} onChange={e => setEditValue(e.target.value)}/>
+                <input className={"input",{"inputLineThrough":task.completed}} type="text" value={editValue} disabled={ task.completed} onChange={e => setEditValue(e.target.value)}/>
             </div>
             <div className="ChangeButtons">
                 {task.completed && <button style={styles.button} onClick={() => checkboxDone(task)} >restore</button>}
@@ -53,7 +53,7 @@ function Task({task, deleteButtonClick, editButtonClick, checkboxDone, CreateSub
             </div>
         </div>
         <div className="Task">
-            <SubtaskList taskId ={task.id} CreateSubtask={CreateSubtask} deleteSubtask={deleteSubtask} checkboxSubtask={checkboxSubtask} renameSubtask={renameSubtask} />
+            <SubtaskList taskId ={task.id} task={task} CreateSubtask={CreateSubtask} deleteSubtask={deleteSubtask} checkboxSubtask={checkboxSubtask} renameSubtask={renameSubtask} />
         </div>
         
     </div>
