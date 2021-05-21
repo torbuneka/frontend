@@ -21,15 +21,13 @@ function App() {
     .catch(err => setError(err))
   },[])
 
-  function calcSequence(){
-    return tasks.length + 2;
-  }
+  
 
   const CreateTask = useCallback(() => {
     const newTask = {
         completed: false,
         title: tasks.length === 0 ? "Task 1" : "Task " + (tasks.length + 1),
-        sequence: calcSequence()
+        sequence: 1
     }
     axios.post("http://185.246.66.84:3000/etorbunova/tasks", newTask)
     .then(response => {
@@ -44,7 +42,7 @@ function App() {
   const CreateSubtask = useCallback((id) => {
     const newSubtask = {
         completed: false,
-        sequence: subtasks.length + 2,
+        sequence: 1 ,
         taskId: id,
         title: "Subtask for current Task" 
     }
