@@ -6,6 +6,7 @@
             v-for="todo in todos" 
              :todo="todo" :key="todo.id"
              v-on:remove-todo="removeTodo"
+             v-on:check-todo="checkTodo"
             />
         </ul>
     </div>
@@ -22,6 +23,9 @@ export default{
   methods: {
       removeTodo(id) {
         this.$emit('remove-todo', id)
+      },
+      checkTodo(id) {
+        this.$emit('check-todo', id)
       }
   }
 }

@@ -4,6 +4,7 @@
     <TodoList 
       v-bind:todos="todos"
       @remove-todo="removeTodo"
+      @check-todo="checkTodo"
       v-on:create-task="createTask"
     />
   </div>
@@ -53,6 +54,16 @@ export default {
       }
       axios.post("http://185.246.66.84:3000/etorbunova/tasks", newtodo)
       .then(response => {this.todos = [...this.todos, response.data]})
+    },
+    checkTodo(id, ttitle, ssequence) {
+      axios.put("http://185.246.66.84:3000/etorbunova/tasks/" + id, {
+          completed: !this.todos.completed,
+          title: ttitle,
+          sequence: ssequence         
+      })
+      .then(response => { this.todos = [...this.todos.filter(t => t.id !== id),response.data];
+      console.log(response.data)
+      })
     }
   }
 }
