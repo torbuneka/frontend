@@ -1,7 +1,7 @@
 <template>
     <li> 
         <span v-bind:class="{done: todo.completed}">
-            <input type="checkbox" :value="todo.completed"  :checked="todo.completed" v-on:change="todo.completed = !todo.completed" > 
+            <input type="checkbox" :value="todo.completed" :disabled="todo.completed == true" :checked="todo.completed" v-on:click="$emit('check-todo', todo.id)" > 
             <input type="text" :value="todo.title" :disabled="todo.completed == true">
             <button>edit</button>
             <button class='delete' v-on:click="$emit('remove-todo', todo.id)">delete</button>

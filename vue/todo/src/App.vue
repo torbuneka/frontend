@@ -11,6 +11,7 @@
 
 <script>
 import TodoList from '@/components/TodoList'
+import axios from 'axios'
 
 export default {
   name: 'App',
@@ -27,11 +28,11 @@ export default {
     }
   },
   mounted() {
-    fetch("http://185.246.66.84:3000/etorbunova/tasks")
+    /*fetch("http://185.246.66.84:3000/etorbunova/tasks")
     .then(response => response.json())
-    .then(json => {this.todos = json})
-    /*axios.get("http://185.246.66.84:3000/etorbunova/tasks")
-    .then(response => (this.todos = response.data));*/
+    .then(json => {this.todos = json})*/
+    axios.get("http://185.246.66.84:3000/etorbunova/tasks")
+    .then(response => (this.todos = response.data));
   },
 
 
@@ -40,17 +41,18 @@ export default {
   },
   methods: {
     removeTodo(id) {
-      this.todos = this.todos.filter(t => t.id !== id)
+      /*this.todos = this.todos.filter(t => t.id !== id)*/
+      axios.delete("http://185.246.66.84:3000/etorbunova/tasks/" + id)
+      .then(() => {this.todos = this.todos.filter(t => t.id !== id)})
     },
     createTask() {
       const newtodo = {
-        id: Date.now(),
-        title: 'Task ' + Date.now(),
         completed: false,
-        sequence: Date.now()
+        title: this.todos.length === 0 ? "Task 1" : "Task " + (this.todos.length + 1),
+        sequence: 1
       }
-      this.todos.push(newtodo)
-      console.log('hello')
+      axios.post("http://185.246.66.84:3000/etorbunova/tasks", newtodo)
+      .then(response => {this.todos = [...this.todos, response.data]})
     }
   }
 }
