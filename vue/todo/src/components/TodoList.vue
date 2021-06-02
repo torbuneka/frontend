@@ -1,10 +1,22 @@
 <template>
     <div>
         <button v-on:click="$emit('create-task')">Create task</button>
+        <h3>Active tasks</h3>
         <ul>
             <TodoItem 
             v-for="todo in todos" 
              :todo="todo" :key="todo.id"
+             v-show="todo.completed==false"
+             v-on:remove-todo="removeTodo"
+             v-on:check-todo="checkTodo"
+            />
+        </ul>
+        <h3>Completed Tasks</h3>
+        <ul>
+            <TodoItem 
+            v-for="todo in todos" 
+             :todo="todo" :key="todo.id"
+             v-show="todo.completed==true"
              v-on:remove-todo="removeTodo"
              v-on:check-todo="checkTodo"
             />
