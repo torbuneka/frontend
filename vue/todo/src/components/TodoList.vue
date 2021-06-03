@@ -41,8 +41,8 @@ export default{
       checkTodo(id) {
         this.$emit('check-todo', id)
       },
-      renameTodo(){
-          this.$emit('rename-todo')
+      renameTodo([id, title, sequence, completed]){
+          this.$emit('rename-todo', [id, title, sequence, completed])
       }
   }
 }

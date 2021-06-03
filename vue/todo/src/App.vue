@@ -93,15 +93,23 @@ export default {
       this.todos.push(a);
       localStorage.setItem('todos', JSON.stringify(this.todos))
     },
-    renameTodo([id, title, sequence, completed]) {
-      const b = {
+    renameTodo([id, title /*, sequence, completed*/]) {
+      /*const b = {
         id: id,
-        completed: !completed,
-        title: title/*this.todos.title*/,
+        completed: completed,
+        title: title ,
         sequence: sequence
       }
       this.todos = this.todos.filter(t => t.id !== id);
       this.todos.push(b);
+      localStorage.setItem('todos', JSON.stringify(this.todos));*/
+
+      for( this.todo in this.todos) {
+        if (this.todo.id == id){
+          this.todo.title = title;
+        }
+      }
+      console.log(title)
       localStorage.setItem('todos', JSON.stringify(this.todos))
     }
   }

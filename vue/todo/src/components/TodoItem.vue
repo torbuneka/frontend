@@ -2,10 +2,10 @@
     <li> 
         <span v-bind:class="{done: todo.completed}">
             <input type="checkbox" :value="todo.completed" :disabled="todo.completed" :checked="todo.completed" v-on:click="$emit('check-todo', [todo.id, todo.title, todo.sequence, todo.completed])" > 
-            <input type="text" :disabled="todo.completed" v-model=todo.title class="form-control" >
+            <input type="text" :disabled="todo.completed" v-model.lazy="todo.title" class="form-control" >
             <button v-if="todo.completed" v-on:click="$emit('check-todo', [todo.id, todo.title, todo.sequence, todo.completed])">restore</button>
-            <!---<button v-if="!todo.completed && onEdit == false" v-on:click="onEdit=!onEdit">edit</button>
-            <button v-if="!todo.completed && onEdit == true" v-on:click="onEdit=!onEdit && $emit('rename-todo', [todo.id, todo.title, todo.sequence, todo.completed])">save</button>--->
+            <!---<button v-if="!todo.completed && onEdit == false" v-on:click="onEdit=!onEdit">edit</button>--->
+            <button v-if="!todo.completed" v-on:click=" $emit('rename-todo', [todo.id, todo.title, todo.sequence, todo.completed])">save changes</button>
             <button class='delete' v-if="!todo.completed" v-on:click="$emit('remove-todo', todo.id)" >delete</button>
         </span>
     </li>
@@ -18,6 +18,11 @@ export default {
     data(){
         return {
             onEdit: false
+        }
+    },
+    watch: {
+        "todo.title" : function(oldVal, newVal) {
+            console.log(oldVal + " " + newVal);
         }
     }
 }
