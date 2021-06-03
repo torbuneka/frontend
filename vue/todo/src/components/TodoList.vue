@@ -9,6 +9,7 @@
              v-show="todo.completed==false"
              v-on:remove-todo="removeTodo"
              v-on:check-todo="checkTodo"
+             v-on:rename-todo="renameTodo"
             />
         </ul>
         <h3>Completed Tasks</h3>
@@ -19,6 +20,7 @@
              v-show="todo.completed==true"
              v-on:remove-todo="removeTodo"
              v-on:check-todo="checkTodo"
+            v-on:rename-todo="renameTodo"
             />
         </ul>
     </div>
@@ -38,6 +40,9 @@ export default{
       },
       checkTodo(id) {
         this.$emit('check-todo', id)
+      },
+      renameTodo(){
+          this.$emit('rename-todo')
       }
   }
 }

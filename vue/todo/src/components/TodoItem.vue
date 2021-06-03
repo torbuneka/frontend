@@ -2,10 +2,11 @@
     <li> 
         <span v-bind:class="{done: todo.completed}">
             <input type="checkbox" :value="todo.completed" :disabled="todo.completed" :checked="todo.completed" v-on:click="$emit('check-todo', [todo.id, todo.title, todo.sequence, todo.completed])" > 
-            <input type="text" :value="todo.title" :disabled="todo.completed">
+            <input type="text" :disabled="todo.completed" v-model=todo.title class="form-control" >
             <button v-if="todo.completed" v-on:click="$emit('check-todo', [todo.id, todo.title, todo.sequence, todo.completed])">restore</button>
-            <button v-if="!todo.completed">edit</button>
-            <button class='delete' v-if="!todo.completed" v-on:click="$emit('remove-todo', todo.id)">delete</button>
+            <!---<button v-if="!todo.completed && onEdit == false" v-on:click="onEdit=!onEdit">edit</button>
+            <button v-if="!todo.completed && onEdit == true" v-on:click="onEdit=!onEdit && $emit('rename-todo', [todo.id, todo.title, todo.sequence, todo.completed])">save</button>--->
+            <button class='delete' v-if="!todo.completed" v-on:click="$emit('remove-todo', todo.id)" >delete</button>
         </span>
     </li>
 </template>
@@ -13,7 +14,12 @@
 <script>
 
 export default {
-    props: ['todo']
+    props: ['todo'],
+    data(){
+        return {
+            onEdit: false
+        }
+    }
 }
 </script>
 
