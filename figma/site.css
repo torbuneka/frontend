@@ -1,30 +1,18 @@
 @font-face {
   font-family: BebasNeueBold;
-  src: url("fonts/bebas-neue-bold.ttf");
+  src: url('fonts/bebas-neue-bold.ttf');
 }
 
 @font-face {
   font-family: Open Sans;
-  src: url("fonts/OpenSans.ttf");
+  src: url('fonts/OpenSans.ttf');
 }
 
 @font-face {
   font-family: Open Sans Bold;
-  src: url("fonts/OpenSans-Bold.ttf");
+  src: url('fonts/OpenSans-Bold.ttf');
 }
 
-*,
-*:before,
-*:after {
-	box-sizing: border-box;
-}
-
-h1,
-h2,
-p {
-	margin: 0;
-	padding: 0;
-}
 
 body {
 	font-family: 'Open Sans';
@@ -234,17 +222,17 @@ body {
   letter-spacing: 0.1875px;
 }
 .about-plan{
-  background-image: url("images/plan.png");
+  background-image: url('images/plan.png');
   background-size: cover contain;
   margin-left: 50px;
   margin-right: 25px;
 }
 .about-manage{
-  background-image: url("images/manage.png");
+  background-image: url('images/manage.png');
   margin-right: 25px;
 }
 .about-build{
-  background-image: url("images/build.png");
+  background-image: url('images/build.png');
 }
 .about-text-margin{
   margin: 15px;
@@ -252,8 +240,8 @@ body {
 
 .service{
   height: 446px;
-  margine-left: 250px;
-  margine-right: 250px;
+  margin-left: 250px;
+  margin-right: 250px;
   margin-top: 117px;
   flex-direction: column;
 }
@@ -455,9 +443,15 @@ body {
   padding: 0;
 }
 
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
 
-
-
-
-
-
+h1,
+h2,
+p {
+	margin: 0;
+	padding: 0;
+}
