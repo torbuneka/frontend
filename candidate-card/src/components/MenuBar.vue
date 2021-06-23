@@ -68,6 +68,7 @@ export default {
   box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.06);
   background-color: #FFFFFF;
   justify-content: space-between;
+  
 }
 .propblems {
   display: flex;

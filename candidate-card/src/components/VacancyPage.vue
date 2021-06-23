@@ -1,5 +1,5 @@
 <template>
-    <div class="main-vacancy-page"  style=" overflow-y: inherit;  ">
+    <div class="main-vacancy-page"  style="overflow-y: auto;  ">
         <div class="top-frame">
             <div class="vac-name">
                 <img src="@/assets/people.png" alt="photo" width="96" height="96">
@@ -7,27 +7,41 @@
 Андрей Сергеевич</p>
             </div>
             <div class="vac-property">
-                <Button iconName="Location" type="text" text="Рязань"/>
-                <Button iconName="Diamond" type="text" text="30 лет"/>
-                <Button iconName="Work" type="text" text="Аналитик" />
+                <div class="area-middle__item">
+                    <Icon iconName="Location" iconColor="#2d81ce" />
+                    <p class="text blue">Рязань</p>
+                </div>
+                <div class="area-middle__item">
+                    <Icon iconName="Diamond" iconColor="#2d81ce" />
+                    <p class="text blue">30 лет</p>
+                </div>
+                <div class="area-middle__item">
+                    <Icon iconName="Work" iconColor="#2d81ce" />
+                    <p class="text blue">Аналитик</p>
+                </div>
+                
             </div>
             <div class="candidate-menu" >
                 <div class="candidate-menu_contacts">
-                    <Button iconName="Mail" type="text" text="Отправить E-mail" />
-                    <Button iconName="Tag" type="text" text="Тэг" />
-                    <Button iconName="Pencil" type="text" text="Изменить" />
-                    <Button iconName="Share" type="text" text="Поделиться" />
+                    <Button1 buttonSize="big" buttonColor="blue"  buttonText="Отправить E-mail" hasLeftIcon iconName="Mail"/>
+                    <Button1 buttonSize="big" buttonColor="blue"  buttonText="Тэг" hasLeftIcon iconName="Tag"/>
+                    <Button1 buttonSize="big" buttonColor="blue"  buttonText="Изменить" hasLeftIcon iconName="Pencil"/>
+                    <Button1 buttonSize="big" buttonColor="blue" buttonText="Поделиться" hasLeftIcon iconName="Share"/>
                 </div>
                 <div class="candidate-menu_points">
-                    <Button iconName="VerticalEllepsis" type="text" text="" />
+                    <Button1 buttonSize="big" buttonColor="blue" buttonText="" hasLeftIcon iconName="VerticalEllepsis"/>
                 </div>
             </div>
         </div>
         <div class="contact-frame">
             <div class="contact-frame_socials">
                 <p>Мобильный</p>
-                <p class="links"><a title="WhatsApp" href="whatsapp://send?phone=+79281234567">+7 (928) 123-45-67</a>
-                <Button iconName="Whatsapp" type="text" text="" /></p>
+                <p class="links"><a title="WhatsApp" href="whatsapp://send?phone=+79281234567">+7 (928) 123-45-67 
+                
+                </a>
+                    <Icon iconName="Whatsapp"/>
+                </p>
+                
             </div>
             <div class="contact-frame_socials">
                 <p>E-mail</p>
@@ -162,11 +176,13 @@
 </template>
 
 <script>
-import Button from "@/components/elements/Button";
+
+import Button1 from "@/components/elements/Button1";
+import Icon from "@/components/elements/Icon";
 
 export default {
   name: 'VacancyPage',
-  components: {Button}
+  components: { Button1, Icon}
 }
 </script>
 
@@ -259,6 +275,8 @@ export default {
 .links {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    
 }
 ::-webkit-scrollbar{width: 2px;}
 .main-vacancy-page{
@@ -341,17 +359,45 @@ export default {
 .candidate-menu{
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
+    justify-content: space-between;
     margin: 12px 0 12px  0;
+    
 }
 .candidate-menu_contacts {
     display: flex;
+    position: relative;
     flex-direction: row;
-    justify-content:space-around;
-    width: 88%;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 80%;
+    margin: 12px 0 12px  0;
 }
 .tab-bar{
     align-items: flex-start;
+}
+.candidate-menu_points{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+.area-middle__item {
+  display: flex;
+  flex-direction: row;
+  margin-right: 35px;
+  align-items: center;
+}
+
+.text {
+  margin: 0px;
+  align-self: center;
+  font-size: 16px;
+  margin: 2px 5px 0px 5px;
+  white-space: nowrap;
+}
+.blue {
+  color: #2d81ce;
 }
 
 </style>
