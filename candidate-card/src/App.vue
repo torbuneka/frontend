@@ -31,10 +31,9 @@ export default {
   margin: auto; 
 }
 .wrapper{
-  max-width: 1200px;
+  width: 1200px;
   margin: 0 auto; 
-  padding-left: 360px;
-  padding-right: 360px;
+  
 }
 #app {
   font-family: Arial;
