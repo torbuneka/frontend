@@ -4,7 +4,7 @@
         <div class="bottom-box_info">
             <p class="vacancy-name">{{ vacancy }}</p>
 
-            <button class="bottom-box_info" v-on:click="showSteps = !showSteps">
+            <button class="button-box_info" v-on:click="showSteps = !showSteps">
               <svg v-show="!showSteps" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M7.70706 7.70709L1.70706 13.7071L0.292847 12.2929L5.58574 6.99999L0.292847 1.70709L1.70706 0.292878L7.70706 6.29288C8.09758 6.6834 8.09758 7.31657 7.70706 7.70709Z" fill="#0C0C0C"/>
               </svg>
@@ -23,20 +23,18 @@
       <div class="bottom-box_info">
         <p class="text-stage text-about-blue">{{ stage }}</p>
       </div>
-      <div class="margin-bot" >
-        <el-progress  :percentage="fot(stage)" :stroke-width="12" :color="comput_color(stage)" :show-text="false" ></el-progress>
+      <div class="bottom-box bottom-box_info" >
+        <el-progress  :percentage="fot(stage)" :stroke-width="12" :class="comput_color(stage)"  :show-text="false" ></el-progress>
       </div>
         
         <div class="bottom-box_info">
           <div class="flex-row">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 5C5.5 3.067 7.06701 1.5 9 1.5C10.933 1.5 12.5 3.067 12.5 5C12.5 6.933 10.933 8.5 9 8.5C7.06701 8.5 5.5 6.933 5.5 5ZM9 0.5C6.51472 0.5 4.5 2.51472 4.5 5C4.5 6.6374 5.37453 8.07055 6.68199 8.85783C3.75081 9.78197 1.485 12.388 0.753431 15.4009C0.396414 16.8713 1.66175 18 3 18H15C16.3383 18 17.6036 16.8713 17.2466 15.4009C16.515 12.388 14.2492 9.78197 11.318 8.85783C12.6255 8.07055 13.5 6.6374 13.5 5C13.5 2.51472 11.4853 0.5 9 0.5ZM1.7252 15.6369C2.55116 12.2352 5.52434 9.5 9 9.5C12.4757 9.5 15.4488 12.2352 16.2748 15.6369C16.439 16.3133 15.8709 17 15 17H3C2.12911 17 1.56096 16.3133 1.7252 15.6369Z" fill="#1767B1"/>
-</svg>
-
-            <p class="text-about-blue">{{ nameP }}</p></div>
-            
-           
-    <p class="text-about-blue text-about-gray" >{{ time }}</p>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 5C5.5 3.067 7.06701 1.5 9 1.5C10.933 1.5 12.5 3.067 12.5 5C12.5 6.933 10.933 8.5 9 8.5C7.06701 8.5 5.5 6.933 5.5 5ZM9 0.5C6.51472 0.5 4.5 2.51472 4.5 5C4.5 6.6374 5.37453 8.07055 6.68199 8.85783C3.75081 9.78197 1.485 12.388 0.753431 15.4009C0.396414 16.8713 1.66175 18 3 18H15C16.3383 18 17.6036 16.8713 17.2466 15.4009C16.515 12.388 14.2492 9.78197 11.318 8.85783C12.6255 8.07055 13.5 6.6374 13.5 5C13.5 2.51472 11.4853 0.5 9 0.5ZM1.7252 15.6369C2.55116 12.2352 5.52434 9.5 9 9.5C12.4757 9.5 15.4488 12.2352 16.2748 15.6369C16.439 16.3133 15.8709 17 15 17H3C2.12911 17 1.56096 16.3133 1.7252 15.6369Z" fill="#1767B1"/>
+            </svg>
+            <p class="text-about-blue">{{ nameP }}</p>
+          </div>
+            <p class="text-about-blue text-about-gray" >{{ time }}</p>
         </div>
          
     </div>
@@ -54,7 +52,7 @@ export default {
             return stage == "Добавлен"? 12.5 : stage == "Телефонное интервью"? 25 : stage == "Назначено интервью с рекрутером"? 37.5 : stage == "Резюме у заказчика"? 50 : stage == "Тестовое задание"? 62.5 : stage == "Назначено интервью с внутренним заказчиком"? 75 : stage == "Проверка службы безопасности"? 87.5 : stage == "Принят на работу" || stage == "Отказ" ? 100 : 0      
         },
         comput_color (stage) {
-           return stage == "Добавлен"? '#FFD766' : stage == "Телефонное интервью"? '#FFD766' : stage == "Назначено интервью с рекрутером"? '#B7CC02' : stage == "Резюме у заказчика"? '#EDFF5C' : stage == "Тестовое задание"? '#68C103' : stage == "Назначено интервью с внутренним заказчиком"? '#67E453' : stage == "Проверка службы безопасности"? '#1F8235' : stage == "Принят на работу" ? '#1F8235' : stage == "Отказ" ? 'red' : 'gray'      
+           return stage == "Добавлен" ? 'orange' : stage == "Телефонное интервью" ? 'orange' : stage == "Назначено интервью с рекрутером"? 'orange' : stage == "Резюме у заказчика"? 'yellow' : stage == "Тестовое задание"? 'yellow' : stage == "Назначено интервью с внутренним заказчиком"? 'yellow' : stage == "Проверка службы безопасности"? 'green' : stage == "Принят на работу" ? 'green' : stage == "Отказ" ? 'red' : 'gray'      
         },
 
     },
@@ -99,6 +97,7 @@ export default {
 .flex-row{
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .vacancy-name{
     font-weight: bold;
@@ -119,7 +118,7 @@ export default {
     flex-direction: row;
     justify-content: space-between;
     position: static;
-    margin-bottom: 6px;
+    padding-top: 12px;
 }
     
 .text-stage{
@@ -128,6 +127,7 @@ export default {
 }
 .top-box{
     height: 48px;
+    padding-bottom: 24px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -137,8 +137,15 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding: 6px 0 6px 0;
     align-content:space-around;
+}
+.button-box_info{
+  position: static;
+  height: 24px;
+  width: 24px;
+  border-radius: 45px;
+  border: none;
+  background: none;
 }
 .box{
     text-align: left;
@@ -150,20 +157,20 @@ export default {
     width: 368px;
     /*height: 184px;*/
     justify-content: space-between;
-    margin-bottom: 8px;
+    margin: 8px 8px 0 8px;
     height: fit-content;
     
 }
 .el-progress-bar{
     background-color: #ECECEC;
     border-radius: 4px;
-    Width:336px;
-    Height:12px;
+    width:336px;
+    height:12px;
     position: static;
 }
 .el-progress-bar__inner{
     border-radius: 4px;
-    Height: 12px;
+    height: 12px;
     position: relative;
 }
 .el-progress-bar__outer {
@@ -174,7 +181,27 @@ export default {
 .el-progress-line{
     background-color: #ECECEC;
     border-radius: 4px;
-    Width:336px;
-    Height:12px;
+    width:336px;
+    height:12px;
+}
+.el-progress.orange .el-progress-bar__inner {
+  background-color: unset;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #FFC266 0%, #D77A24 129.17%);
+}
+.el-progress.yellow .el-progress-bar__inner {
+  background-color: unset;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #EDFF5C 0%, #D5C004 129.17%);
+}
+.el-progress.green .el-progress-bar__inner {
+  background-color: unset;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #67E453 0%, #1F8235 129.17%);
+}
+.el-progress.red .el-progress-bar__inner {
+  background-color: unset;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #FFC266 0%, #D77A24 129.17%);
 }
 </style>
