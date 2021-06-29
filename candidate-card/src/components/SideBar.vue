@@ -36,7 +36,7 @@ export default {
     components: {Icon, Vacancy, Menu, }
 }
 </script>
-<style>
+<style  lang="scss">
 
 .info-vac{
     width: 384px;
@@ -77,7 +77,9 @@ export default {
 .right-panel {
     width:384px;  
     background: #FFFFFF;
-    margin-top: 10px;
+   text-align: left;
+   
+   margin-left: 24px;
     
     /*position:fixed;*/
     align-self: right;

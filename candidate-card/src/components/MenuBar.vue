@@ -3,12 +3,13 @@
       <div class="menu_box">
       
       <img alt="t1" src="@/assets/talent.png" width="170" height="24">
-      <div class="propblems">
+      <div class="Tabs">
       <el-menu
       default-active="0"
       mode="horizontal"
       text-color="#C0C0C0"
       active-text-color="#2d81ce"
+      @select="handleSelect"
     >
       <el-menu-item index="0">Вакансии</el-menu-item>
       <el-menu-item index="1">Кандидаты</el-menu-item>
@@ -38,11 +39,22 @@ import Avatar from '@/components/elements/Avatar'
 export default {
     components: {
     Notification, Avatar
-  }
+  },
+  data() {
+    return {
+      tabToShow: "0",
+    };
+  },
+  name: "panel-tabs",
+  methods: {
+    handleSelect(key) {
+      this.tabToShow = key;
+    },
+  },
 }
 </script>
 
-<style>
+<style  lang="scss">
 .login_box{
   justify-content: space-between;
   align-items: center;
@@ -58,9 +70,8 @@ export default {
   flex-direction: row;
   /*height: 32px;*/
   width: 1200px;
-  
   justify-content: space-between;
-  
+  align-items: center;
   margin: auto; 
   
 }
@@ -70,17 +81,14 @@ export default {
   justify-content: space-between;
   
 }
-.propblems {
+.Tabs {
   display: flex;
   flex-direction: row;
-  /*justify-content: space-between;*/
   position: static;
+  height: 60px;
+  color: black !important;
 }
-.li{
-  display: flex;
-  justify-content: space-between;
-  padding-left: 5px;
-}
+
 button {
   position: absolute;
 }
@@ -88,31 +96,24 @@ button {
   margin-bottom: 0px !important;
 }
 .el-menu {
-  /*margin-top: -20px;*/
   justify-content: space-around;
   display: flex;
   flex-direction: row;
+  margin-top: -20px;
 }
 .el-menu-item {
-  font-size: 18px;
+  font-size: 16px !important;
   font-weight: bold;
-  margin-right: 40px;
+  margin-right: 20px !important;
+  margin-left: 20px !important;
   
 }
 .el-menu-item.is-active {
-  font-size: 18px;
-}
-.el-menu-item:hover {
-  font-size: 18px;
-}
-.el-menu--horizontal > .el-menu-item {
-  border-bottom: 4px solid #409eff;
-  padding-left: 24px;
-  margin-right: 24px;
-  overflow-block: 24px;
-  margin-block: 24px;
+  color: #2d81ce !important;
 }
 
-
-
+.el-menu--horizontal > .el-menu-item { 
+  border-bottom: 0px solid #409eff;
+  padding: 0px;
+}
 </style>

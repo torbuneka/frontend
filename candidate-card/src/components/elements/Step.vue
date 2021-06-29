@@ -26,7 +26,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .step-box{
     background-color: #EFF8FF;
     border: 1px solid #D6EBFF;

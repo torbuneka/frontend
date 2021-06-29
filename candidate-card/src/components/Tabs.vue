@@ -1,45 +1,42 @@
 <template>
-    <div>    
-      <ul>
-        <li class="lil" role="presentation" @click="currentTab = 'Резюме'"><a href="#">Резюме</a></li>
-        <li class="lil" role="presentation" @click="currentTab = 'Чек-лист'"><a href="#">Чек-лист</a></li>
-        <li class="lil" role="presentation" @click="currentTab = 'Коммуникации'"><a href="#">Коммуникации</a></li>
-        <li class="lil" role="presentation" @click="currentTab = 'Документы'"><a href="#">Документы</a></li>
-        <li class="lil" role="presentation" @click="currentTab = 'История'"><a href="#">История</a></li>
-      </ul> 
-      <div class="tab-content">
-        <div v-if="currentTab == 'Резюме'">Главная
-            ffhhfhfhf
-            fdfddf
-            df </div>
-        <div v-if="currentTab == 'Чек-лист'">Профиль</div>
-        <div v-if="currentTab == 'Коммуникации'">Сообщения</div>
-      </div>
+    <div class="Tabs">
+      <el-menu
+      default-active="0"
+      mode="horizontal"
+      text-color="#C0C0C0"
+      active-text-color="#2d81ce"
+      @select="handleSelect"
+    >
+      <el-menu-item index="0">Резюме</el-menu-item>
+      <el-menu-item index="1">Чек-лист</el-menu-item>
+      <el-menu-item index="2">Коммуникации</el-menu-item>
+      <el-menu-item index="3">Документы</el-menu-item>
+      <el-menu-item index="4">История</el-menu-item>
+    </el-menu>
     </div>
+
+    
     
 </template>
 <script>
 
 export default {
-    name: 'Tabs'
+  name: 'Tabs',
+
+  data() {
+    return {
+      tabToShow: "0",
+    };
+  },
+  
+  methods: {
+    handleSelect(key) {
+      this.tabToShow = key;
+    },
+  },
   
 }
 </script>
-<style>
-.currentTab {
-  color: #16C0B0;
-  text-decoration: underline;
-}
-.lil {
-  list-style: none;
-  margin: 0;
-  cursor: pointer;
-  display: flex;
-  flex-direction: row;
-}
+<style  lang="scss">
 
-.ul {
-    list-style: none;
-    margin: 0;
-}
 </style>

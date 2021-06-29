@@ -88,12 +88,13 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style  lang="scss">
 .el-button {
   border-radius: 12px;
   padding-top: 7px;
-  border-color: transparent;
+  border-color: transparent !important;
   position: relative;
+  align-items: center !important;
 }
 .el-button.medium {
   border-radius: 12px;
@@ -114,7 +115,7 @@ export default {
   padding-top: 5px;
 }
 .blueButton {
-  background: #eff8ff;
+  background: #eff8ff !important;
 }
 .blueButton:hover {
   background: #d6ebff;

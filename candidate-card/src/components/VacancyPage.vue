@@ -3,8 +3,7 @@
         <div class="top-frame">
             <div class="vac-name">
                 <img src="@/assets/people.png" alt="photo" width="96" height="96">
-                <p class="name">Щербаков
-Андрей Сергеевич</p>
+                <p class="name">Щербаков <br>Андрей Сергеевич</p>
             </div>
             <div class="vac-property">
                 <div class="area-middle__item">
@@ -29,14 +28,18 @@
                     <Button1 buttonSize="big" buttonColor="blue" buttonText="Поделиться" hasLeftIcon iconName="Share"/>
                 </div>
                 <div class="candidate-menu_points">
-                    <Button1 buttonSize="big" buttonColor="blue" buttonText="" hasLeftIcon iconName="VerticalEllepsis"/>
+                    <button> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="4" r="2" fill="#0C0C0C"/><circle cx="12" cy="20" r="2" fill="#0C0C0C"/><circle cx="12" cy="12" r="2" fill="#0C0C0C"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
+        <hr  style="color: #E2E2E2; margin-top: 24px; margin-bottom: 24px; width: 712px" >
         <div class="contact-frame">
             <div class="contact-frame_socials">
                 <p>Мобильный</p>
-                <p class="links"><a title="WhatsApp" href="whatsapp://send?phone=+79281234567">+7 (928) 123-45-67 
+                <p class="links"><a class="links" title="WhatsApp" href="whatsapp://send?phone=+79281234567">+7 (928) 123-45-67 
                 
                 </a>
                     <Icon iconName="Whatsapp"/>
@@ -45,23 +48,23 @@
             </div>
             <div class="contact-frame_socials">
                 <p>E-mail</p>
-                <p class="links"><a href="sherbakov-as5@yandex.ru">sherbakov-as5@yandex.ru</a></p>
+                <p class="links"><a class="links" href="sherbakov-as5@yandex.ru">sherbakov-as5@yandex.ru</a></p>
             </div>
             <div class="contact-frame_socials">
                 <p>Telegram</p>
-                <p class="links"><a title="Telegram" href="https://telegram.me/sherbakov" target="_blank">@sherbakov</a></p>
+                <p class="links"><a class="links" title="Telegram" href="https://telegram.me/sherbakov" target="_blank">@sherbakov</a></p>
             </div>
             <div class="contact-frame_socials">
                 <p>Соц.сети</p>
                 <p class="links">
-                    <a title="Facebook">
+                    <a class="links" title="Facebook">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM8.5 8C8.5 5.5 9.5 4.0001 13 4V6C11 6 11 7 11 8H13.5L13 10H11V16H8.5V10H7V8H8.5Z" fill="#0A569B"/>
                         </svg>
                     </a>
                 </p>
                 <p class="links">
-                    <a title="Linkedin">
+                    <a class="links" title="Linkedin">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM4.79938 7.82617V15.0859H6.72028V7.82617H4.79938ZM6.70062 5.91406C6.70062 6.46635 6.25291 6.91406 5.70062 6.91406C5.14834 6.91406 4.70062 6.46635 4.70062 5.91406C4.70062 5.36178 5.14834 4.91406 5.70062 4.91406C6.25291 4.91406 6.70062 5.36178 6.70062 5.91406ZM13.3785 15.0859H15.2994V10.5742C15.2994 10.0137 15.2629 9.58301 15.19 9.28223C15.1216 8.98145 14.9963 8.71257 14.814 8.47559C14.6363 8.23861 14.372 8.04492 14.0211 7.89453C13.6701 7.73958 13.2828 7.66211 12.8589 7.66211C11.8974 7.66211 11.0998 8.07227 10.4664 8.89258V7.82617H8.68219V15.0859H10.6031V11.7979C10.6031 10.9867 10.6509 10.4307 10.7466 10.1299C10.8469 9.8291 11.0292 9.58757 11.2935 9.40527C11.5578 9.22298 11.8563 9.13184 12.189 9.13184C12.4488 9.13184 12.6698 9.19564 12.8521 9.32324C13.039 9.45085 13.1734 9.63086 13.2554 9.86328C13.3375 10.0911 13.3785 10.597 13.3785 11.3809V15.0859Z" fill="#2D81CE"/>
                         </svg>
@@ -113,13 +116,13 @@
                     <div class="candidate-work">
                         <div class="candidate-work-time">
                             <p>Февраль 2019 — по настоящее время</p>
-                            <p>2 года 4 месяца</p>
+                            <p class="gray_text">2 года 4 месяца</p>
                         </div>
                         <div class="candidate-work-place">
                             <p class="text_bond">Спарго Технологии, ЗАО</p>
                             <p>Рязань</p>
                             <p>Информационные технологии, системная интеграция, интернет</p>
-                            <p>Системная интеграция, автоматизации технологических и бизнес-процессов предприятия, ИТ-консалтинг</p>
+                            <p class="gray_text">Системная интеграция, автоматизации технологических и бизнес-процессов предприятия, ИТ-консалтинг</p>
                             <p class="text_bond">Системный аналитик</p>
                             <p>— анализ и тестирование ПО, постановка задач на доработку ПО 
                                 <br> — консультации и обучение персонала аптек работе с ПО 
@@ -186,218 +189,5 @@ export default {
 }
 </script>
 
-<style>
-.candidate{
-    text-align: left;
-}
-.candidate-educ_box{
-    display: flex;
-    flex-direction: row;
-    text-align: left;
-}
-.candidate-educ{
-    width: 518px;
-}
-.skill-box{
-    margin: 8px 0 8px 0;
-    
-}
-.candidate-skills{
-    width: 760px;
-    text-align: left;
-}
-.skills{
-    color: #797979;
-    background: #FAF9F9;
-    border: 1px solid #E2E2E2;
-    box-sizing: border-box;
-    border-radius: 10px;
-    flex-grow: 0;
-    display: inline;
-    margin: 0px 4px;
-    padding: 0px 8px;
-    font-size: 16px;
-}
-.text_bond{
-    font-weight: bold;
-    font-size: 16px;
-}
-.candidate-work-time{
-    width: 139px;
-}
-.candidate-work-place{
-    width: 548px;
-    margin-left: 25px;
-}
-.candidate-work{
-    display: flex;
-    flex-direction: row;
-    text-align: left;
-    
-}
-.candidate-big-gray{
-    color: #C0C0C0;
-    text-align: left;
-}
-.candidate-big{
-    font-weight: bold;
-    font-size: 24px;
-}
-
-.hr {
-    color: #E2E2E2;
-}
-.about-vacancy{
-    text-align: left;
-}
-
-.vacancy-price{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    
-}
-.contact-frame_socials {
-    background-color: #FAF9F9;
-    height: 40px;
-    margin: 2px 0 2px 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-right: 40%;
-}
-.candidate-info_update{
-    text-align: left;
-    color: #C0C0C0;
-    margin-top: 25px;
-}
-
-.links {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    
-}
-::-webkit-scrollbar{width: 2px;}
-.main-vacancy-page{
-    margin: 40px;
-    flex-direction: row;
-    background-color: #FFFFFF;
-    
-}
-.top-frame {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 40px;
-}
-.vacancy {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 40px;
-    line-height: 48px;
-    position: static;
-    /*width: 711px;*/
-    flex-grow: 0;
-    color: black;
-    flex: none;
-    order: 2;
-    text-align: left;
-    margin-bottom: 24px;
-}
-.select-vac {
-    background: #FFFFFF;
-    border: 1px solid #E2E2E2;
-    box-sizing: border-box;
-    border-radius: 10px;
-    width: 126px;
-    height: 32px;
-    margin: 0px 10px;
-    /*padding-left: 16px;
-    margin-right: 14px;*/
-    text-align: center;
-}
-.Tags{
-    width: 164px;
-    height: 32px;
-    background: #FAF9F9;
-    border: 1px solid #ECECEC;
-    box-sizing: border-box;
-    border-radius: 12px;
-    text-align: center;
-    font-size: 16px;
-    color: #9E9E9E;
-}
-.name {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 40px;
-    line-height: 48px;
-    width: 588px;
-}
-.vac-name {
-    display: flex;
-    flex-direction: row;
-}
-
-.top-frame {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-}
-
-.vac-property{
-   display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-    width: 319px;
-    margin: 12px 0 12px  0;
-}
-
-.candidate-menu{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 12px 0 12px  0;
-    
-}
-.candidate-menu_contacts {
-    display: flex;
-    position: relative;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: space-between;
-    width: 80%;
-    margin: 12px 0 12px  0;
-}
-.tab-bar{
-    align-items: flex-start;
-}
-.candidate-menu_points{
-    display: flex;
-    position: relative;
-    flex-direction: row;
-    justify-content: end;
-    align-items: center;
-}
-.area-middle__item {
-  display: flex;
-  flex-direction: row;
-  margin-right: 35px;
-  align-items: center;
-}
-
-.text {
-  margin: 0px;
-  align-self: center;
-  font-size: 16px;
-  margin: 2px 5px 0px 5px;
-  white-space: nowrap;
-}
-.blue {
-  color: #2d81ce;
-}
-
+<style  lang="scss">
 </style>

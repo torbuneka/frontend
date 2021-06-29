@@ -23,27 +23,6 @@ export default {
 }
 </script>
 
-<style>
-.main_page{
-  display: flex;
-  flex-direction: row;
-  /*width: 1200px;*/
-  margin: auto; 
-}
-.wrapper{
-  width: 1200px;
-  margin: 0 auto; 
-  
-}
-#app {
-  font-family: Arial;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  /*width: 1200px;*/
-  background-color: #FAF9F9;
-}
-
+<style  lang="scss">
 
 </style>

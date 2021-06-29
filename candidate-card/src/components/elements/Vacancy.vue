@@ -92,7 +92,7 @@ export default {
 };
 </script>
 
-<style>
+<style  lang="scss">
 .margin-bot{
   margin-bottom: 20px;
 }

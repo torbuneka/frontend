@@ -1,6 +1,7 @@
 import {useContext, useEffect, useState} from 'react';
 import SubtaskList from './SubtaskList';
 import SubtaskContext from '../SubtaskContext'
+import { DragDropContext, Droppableв  } from 'react-beautiful-dnd';
 
 const styles = {
     task:{
@@ -37,9 +38,38 @@ function Task({task, deleteButtonClick, editButtonClick, checkboxDone, CreateSub
             setEditValue(task.title);
         }
     }
+
+    const [currentCard, setCurrentCard] = useState(null)
+
+    function dragStartHandler(e, card) {
+        console.log('drag', card);
+        setCurrentCard(card.sequence)
+    }
+    function dragEndHandler(e) {
+        e.target.style.background = 'white'
+    }
+    function dragOverHandler(e) {
+        e.preventDefault();
+        e.target.style.background = 'lightgray'
+    }
+    function dropHandler(e, card) {
+        e.preventDefault();
+        console.log('drop', card);
+    }
+
+
+
     
   return (
-    <div style={styles.task} className="BigTask">
+    <div style={styles.task} className="BigTask" 
+    draggable={true} 
+    onDragStart={(e)=>dragStartHandler(e, task)}
+    onDragLeave={(e)=>dragEndHandler(e)}
+    onDragOver={(e)=>dragOverHandler(e)}
+    onDrop={(e)=>dropHandler(e, task)}>
+
+
+
         <div className="Task" >
             <div>
                 <input className="checkbox" type="checkbox" defaultChecked={task.completed} disabled={task.completed} onChange={() => checkboxDone(task)}/>

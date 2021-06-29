@@ -21,7 +21,7 @@
 }
 </script>
 
-<style>
+<style  lang="scss">
 .demo-avatar{
     padding: 0;
     margin: 0;
