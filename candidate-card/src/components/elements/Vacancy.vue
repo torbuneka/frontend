@@ -2,7 +2,7 @@
   <div class="box">
     <div class="top-box">
         <div class="bottom-box_info">
-            <p class="vacancy-name">{{ vacancy }}</p>
+            <p class="vacancy-name"><a> {{ vacancy }} </a></p>
 
             <button class="button-box_info" v-on:click="showSteps = !showSteps">
               <svg v-show="!showSteps" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -202,6 +202,6 @@ export default {
 .el-progress.red .el-progress-bar__inner {
   background-color: unset;
   border-radius: 4px;
-  background: linear-gradient(90deg, #FFC266 0%, #D77A24 129.17%);
+  background: linear-gradient(90deg, #FF8686  0%, #EC2222 129.17%);
 }
 </style>

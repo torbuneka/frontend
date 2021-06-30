@@ -3,7 +3,7 @@
         <div class="top-frame">
             <div class="vac-name">
                 <img src="@/assets/people.png" alt="photo" width="96" height="96">
-                <p class="name">Щербаков <br>Андрей Сергеевич</p>
+                <p class="name"> <a>Щербаков <br>Андрей Сергеевич </a></p>
             </div>
             <div class="vac-property">
                 <div class="area-middle__item">
@@ -134,22 +134,20 @@
                 <div class="candidate-skill">
                     <h3 class="candidate-big-gray candidate-big">Ключевые навыки</h3>
                     <div class="candidate-skills">
-                        <div class="skill-box">
+                        
                             <p class="skills">Настройка ПК</p>
                             <p class="skills">Офисная техника</p>
                             <p class="skills">Техническое обслуживание</p>
                             <p class="skills">Деловая переписка</p>
-                        </div>
-                        <div class="skill-box">
+                        
                             <p class="skills">Работа в команде</p>
                             <p class="skills">Телефонные переговоры</p>
                             <p class="skills">Деловое общение</p>
                             <p class="skills">Обучаемость</p>
-                        </div>
-                        <div class="skill-box">
+                        
                             <p class="skills">Тестирование пользовательского интерфейса</p>
                             <p class="skills">MS SQL</p>
-                        </div>
+                        
                         
                     </div>
                 </div>
