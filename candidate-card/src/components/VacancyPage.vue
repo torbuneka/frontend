@@ -3,7 +3,7 @@
         <div class="top-frame">
             <div class="vac-name">
                 <img src="@/assets/people.png" alt="photo" width="96" height="96">
-                <p class="name"> <a>Щербаков <br>Андрей Сергеевич </a></p>
+                <a class="name-big">Щербаков <br>Андрей Сергеевич </a>
             </div>
             <div class="vac-property">
                 <div class="area-middle__item">
@@ -70,31 +70,30 @@
                         </svg>
                     </a>
                 </p>
-                
             </div>
-
+        </div>
+        <div class="tag-box">
+            <InfoTags />
         </div>
         
         <div class="tab-bar">
-           <el-menu
-      default-active="0"
-      mode="horizontal"
-      text-color="#C0C0C0"
-      active-text-color="#2d81ce"
-    >
-      <el-menu-item index="0">Резюме</el-menu-item>
-      <el-menu-item index="1">Чек-лист</el-menu-item>
-      <el-menu-item index="2">Коммуникации</el-menu-item>
-      <el-menu-item index="3">Документы</el-menu-item>
-      <el-menu-item index="4">История</el-menu-item>
-    </el-menu>
+           <el-menu default-active="0"  mode="horizontal"  text-color="#C0C0C0"  active-text-color="#2d81ce">
+              <el-menu-item index="0">Резюме</el-menu-item>
+              <el-menu-item index="1">Чек-лист</el-menu-item>
+              <el-menu-item index="2">Коммуникации</el-menu-item>
+              <el-menu-item index="3">Документы</el-menu-item>
+              <el-menu-item index="4">История</el-menu-item>
+            </el-menu>
         </div>
         <div class="candidate-info">
-            <div class="candidate-info_update">Обновлено 23.05.2021</div>
+            <div class="candidate-info_update">
+            <p>Обновлено 23.05.2021</p>
+            <p>Добавил: Natalya Loginova</p>
+            </div>
             <div class="vacancy-info">
                 <div class="vacancy-price">
                 <h3 class="candidate-big">Аналитик</h3>
-                <h3 class="candidate-big">50 000 ₽</h3>
+                <h3 class="candidate-big price">50 000 ₽</h3>
                 </div>
                 <div class="about-vacancy">
                     <p>Информационные технологии, интернет, телеком</p>
@@ -180,12 +179,16 @@
 
 import Button1 from "@/components/elements/Button1";
 import Icon from "@/components/elements/Icon";
+import InfoTags from "@/components/elements/InfoTags";
 
 export default {
   name: 'VacancyPage',
-  components: { Button1, Icon}
+  components: { Button1, Icon, InfoTags}
 }
 </script>
 
 <style  lang="scss">
+.price{
+    white-space: nowrap;
+}
 </style>

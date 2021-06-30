@@ -1,6 +1,7 @@
 <template>
   <!-- Новый компонент, сейчас используется для всех кнопок -->
-  <el-button
+  <div class="button-type">
+    <el-button
     v-bind:class="{
       blueButton: buttonColor === 'blue',
       darkBlueButton: buttonColor === 'darkBlue',
@@ -32,6 +33,7 @@
       />
     </div>
   </el-button>
+  </div>
 </template>
 <script>
 import Icon from "@/components/elements/Icon";
@@ -89,70 +91,76 @@ export default {
 };
 </script>
 <style  lang="scss">
-.el-button {
-  border-radius: 12px;
-  padding-top: 7px;
-  border-color: transparent !important;
-  position: relative;
-  align-items: center !important;
-}
-.el-button.medium {
-  border-radius: 12px;
-  padding-top: 2px;
-}
-.el-button.small {
-  border-radius: 12px;
-  padding-top: 0px;
-}
-.big {
-  height: 40px;
-}
-.medium {
-  height: 30px;
-}
-.small {
-  height: 25px;
-  padding-top: 5px;
-}
-.blueButton {
-  background: #eff8ff !important;
-}
-.blueButton:hover {
-  background: #d6ebff;
-  color: #1767b1;
-}
-.blueButton:disabled {
-  background: #faf9f9;
-}
-.darkBlueButton {
-  background: #2d81ce;
-}
-.darkBlueButton:hover {
-  background: #1767b1;
-}
-.darkBlueButton:disabled {
-  background: #e2e2e2;
-}
-.transparentButton {
-  background: transparent;
-  border-color: transparent;
-}
-.transparentButton:hover {
-  background: transparent;
-  border-color: transparent;
-  background: #eff8ff;
-}
-.button__content {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.button__content-icon {
-  padding-bottom: 2px;
-}
-.content__text {
-  font-weight: bold;
-  font-size: 16px;
-  margin: 5px;
+.button-type{
+  .el-button {
+    border-radius: 12px;
+    padding-top: 7px;
+    border-color: transparent !important;
+    position: relative;
+    align-items: center !important;
+    margin-right: 12px;
+  }
+  .blueButton {
+      background: #EFF8FF; 
+      color: #2D81CE;
+    }
+    .blueButton:hover {
+      background: #D6EBFF;
+      color: #1767b1;
+    }
+    .blueButton:disabled {
+      background: #faf9f9;
+    }
+  .el-button.medium {
+    border-radius: 12px;
+    padding-top: 2px;
+  }
+  .el-button.small {
+    border-radius: 12px;
+    padding-top: 0px;
+  }
+  .big {
+    height: 40px;
+  }
+  .medium {
+    height: 30px;
+  }
+  .small {
+    height: 25px;
+    padding-top: 5px;
+  }
+
+  .darkBlueButton {
+    background: #2d81ce;
+  }
+  .darkBlueButton:hover {
+    background: #1767b1;
+  }
+  .darkBlueButton:disabled {
+    background: #e2e2e2;
+  }
+  .transparentButton {
+    background: transparent;
+    border-color: transparent;
+  }
+  .transparentButton:hover {
+    background: transparent;
+    border-color: transparent;
+    background: #eff8ff;
+  }
+  .button__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .button__content-icon {
+    padding-bottom: 2px;
+  }
+  .content__text {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 5px;
+  }
 }
 </style>
