@@ -160,7 +160,7 @@ export default {
   .content__text {
     font-weight: bold;
     font-size: 16px;
-    margin: 5px;
+    margin: 5px 0 5px 7px;
   }
 }
 </style>

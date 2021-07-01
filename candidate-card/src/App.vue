@@ -3,7 +3,7 @@
     <MenuBar />
     <div class="wrapper">
       <div class="main_page">
-        <VacancyPage />
+        <CandidatePage />
         <SideBar />
       </div>
     </div>
@@ -11,14 +11,14 @@
 </template>
 
 <script>
-import VacancyPage from '@/components/VacancyPage';
+import CandidatePage from '@/components/CandidatePage';
 import SideBar from '@/components/SideBar'
 import MenuBar from '@/components/MenuBar'
 
 export default {
   name: 'App',
   components: {
-    VacancyPage, SideBar, MenuBar
+    CandidatePage, SideBar, MenuBar
   }
 }
 </script>

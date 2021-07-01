@@ -3,18 +3,12 @@
       <div class="menu_box">
       
       <img alt="t1" src="@/assets/talent.png" width="170" height="24">
-      <div class="Tabs">
-      <el-menu
-      default-active="0"
-      mode="horizontal"
-      text-color="#C0C0C0"
-      active-text-color="#2d81ce"
-      @select="handleSelect"
-    >
-      <el-menu-item index="0">Вакансии</el-menu-item>
-      <el-menu-item index="1">Кандидаты</el-menu-item>
-      <el-menu-item index="2">Рассылки</el-menu-item>
-    </el-menu>
+      <div class="tabs">
+        <el-tabs v-model="activeName">
+          <el-tab-pane label="Вакансии" name="vacancy"></el-tab-pane>
+          <el-tab-pane label="Кандидаты" name="candidate"></el-tab-pane>
+          <el-tab-pane label="Рассылки" name="mailings"></el-tab-pane>
+        </el-tabs>
     </div>
       
       <div class="search">
@@ -42,7 +36,7 @@ export default {
   },
   data() {
     return {
-      tabToShow: "0",
+      activeName: "vacancy",
     };
   },
   name: "panel-tabs",
@@ -81,39 +75,42 @@ export default {
   justify-content: space-between;
   
 }
-.Tabs {
+.tabs {
   display: flex;
   flex-direction: row;
   position: static;
   height: 60px;
-  color: black !important;
+ 
 }
 
 button {
   position: absolute;
 }
-.el-tabs__header {
-  margin-bottom: 0px !important;
-}
-.el-menu {
-  justify-content: space-around;
-  display: flex;
-  flex-direction: row;
-  margin-top: -20px;
-}
-.el-menu-item {
-  font-size: 16px !important;
-  font-weight: bold;
-  margin-right: 20px !important;
-  margin-left: 20px !important;
-  
-}
-.el-menu-item.is-active {
-  color: #2d81ce !important;
-}
-
-.el-menu--horizontal > .el-menu-item { 
-  border-bottom: 0px solid #409eff;
-  padding: 0px;
+.el-tabs {
+  & ::v-deep &__item {
+    font-size: 16px;
+    font-weight: bold;
+    color: $black-400;
+    margin: -10px 0px 7px 0px;
+    &.is-active {
+      color: $blue-600;
+    }
+  }
+  & ::v-deep &__nav-scroll {
+    margin: 25px 0px 0px 25px;
+  }
+  & ::v-deep &__active-bar {
+    background-color: $blue-600;
+    height: 4px;
+  }
+  & ::v-deep &__header {
+    margin: 0px;
+  }
+  & ::v-deep &__nav-wrap::after {
+    height: 1px;
+  }
+  &__nav {
+    margin-left: 25px;
+  }
 }
 </style>

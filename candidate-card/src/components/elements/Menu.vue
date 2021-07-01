@@ -1,39 +1,49 @@
 <template>
-    <div class="Tabs">
-      <el-menu
-      default-active="0"
-      mode="horizontal"
-      text-color="#C0C0C0"
-      active-text-color="#2d81ce"
-      @select="handleSelect"
-    >
-      <el-menu-item index="0">Подбор</el-menu-item>
-      <el-menu-item index="1">Комментарии</el-menu-item>
-      </el-menu>
-    </div>
-
-    
-    
+  <div class="vacancy-tabs">
+    <el-tabs v-model="activeName">
+      <el-tab-pane label="Подбор" name="search"></el-tab-pane>
+      <el-tab-pane label="Комментарии" name="comments"></el-tab-pane>
+    </el-tabs>
+  </div>
 </template>
+
 <script>
-
 export default {
-  name: 'Tabs',
-
   data() {
     return {
-      tabToShow: "0",
+      activeName: "search",
     };
   },
-  
-  methods: {
-    handleSelect(key) {
-      this.tabToShow = key;
-    },
-  },
-  
-}
+  name: "vacancy-tabs",
+};
 </script>
-<style  lang="scss">
 
+<style lang="scss" scoped>
+.el-tabs {
+  & ::v-deep &__item {
+    font-size: 18px;
+    font-weight: bold;
+    color: $black-400;
+    margin: -10px 0px 7px 0px;
+    &.is-active {
+      color: $blue-600;
+    }
+  }
+  & ::v-deep &__nav-scroll {
+    margin: 25px 0px 0px 25px;
+  }
+  & ::v-deep &__active-bar {
+    background-color: $blue-600;
+    height: 4px;
+  }
+  & ::v-deep &__header {
+    margin: 0px;
+  }
+  & ::v-deep &__nav-wrap::after {
+    height: 1px;
+  }
+  &__nav {
+    margin-left: 25px;
+  }
+}
 </style>

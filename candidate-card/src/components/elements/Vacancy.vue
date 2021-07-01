@@ -100,9 +100,12 @@ export default {
   align-items: center;
 }
 .vacancy-name{
-    font-weight: bold;
-    font-size: 16px;
-    margin: 0;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+  a{
+    text-decoration:none ;
+  }
 }
 .text-about-blue{
     font-weight: normal;

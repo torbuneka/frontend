@@ -1,9 +1,9 @@
 <template>
-    <div class="main-vacancy-page"  style="overflow-y: auto;  ">
+    <div class="main-candidate-page"  style="overflow-y: auto;  ">
         <div class="top-frame">
             <div class="vac-name">
                 <img src="@/assets/people.png" alt="photo" width="96" height="96">
-                <a class="name-big">Щербаков <br>Андрей Сергеевич </a>
+                <a class="name-big" href="www.yandex.ru">Щербаков <br>Андрей Сергеевич </a>
             </div>
             <div class="vac-property">
                 <div class="area-middle__item">
@@ -75,16 +75,16 @@
         <div class="tag-box">
             <InfoTags />
         </div>
-        
         <div class="tab-bar">
-           <el-menu default-active="0"  mode="horizontal"  text-color="#C0C0C0"  active-text-color="#2d81ce">
-              <el-menu-item index="0">Резюме</el-menu-item>
-              <el-menu-item index="1">Чек-лист</el-menu-item>
-              <el-menu-item index="2">Коммуникации</el-menu-item>
-              <el-menu-item index="3">Документы</el-menu-item>
-              <el-menu-item index="4">История</el-menu-item>
-            </el-menu>
+            <el-tabs v-model="activeName">
+                <el-tab-pane label="Резюме" name="resume"></el-tab-pane>
+                <el-tab-pane label="Чек-лист" name="check list"></el-tab-pane>
+                <el-tab-pane label="Коммуникации" name="communication"></el-tab-pane>
+                <el-tab-pane label="Документы" name="documents"></el-tab-pane>
+                <el-tab-pane label="История" name="history"></el-tab-pane>
+            </el-tabs>
         </div>
+        
         <div class="candidate-info">
             <div class="candidate-info_update">
             <p>Обновлено 23.05.2021</p>
@@ -104,7 +104,7 @@
                 <div class="vacancy-link">
                     <hr style="color: #E2E2E2; margin-top: 33px; margin-bottom: 24px" >
                     Ссылка на источник резюме
-                    <a style="color: #57A2E8" href="">headhunter <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <a class="link" href="">headhunter <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M2.84319 14.1569C1.47635 12.79 1.47635 10.5739 2.84319 9.20711L4.61096 7.43934L3.90385 6.73223L2.13608 8.5C0.378723 10.2574 0.378723 13.1066 2.13608 14.864C3.89344 16.6213 6.74268 16.6213 8.50004 14.864L10.2678 13.0962L9.5607 12.3891L7.79294 14.1569C6.4261 15.5237 4.21002 15.5237 2.84319 14.1569ZM7.43938 4.61091L9.20715 2.84315C10.574 1.47631 12.7901 1.47631 14.1569 2.84315C15.5237 4.20998 15.5237 6.42606 14.1569 7.79289L12.3891 9.56066L13.0962 10.2678L14.864 8.5C16.6214 6.74264 16.6214 3.8934 14.864 2.13604C13.1066 0.378679 10.2574 0.37868 8.50004 2.13604L6.73228 3.90381L7.43938 4.61091ZM6.02517 11.682L11.682 6.02513L10.9749 5.31802L5.31806 10.9749L6.02517 11.682Z" fill="#57A2E8"/>
                         </svg>
                     </a>
@@ -182,13 +182,52 @@ import Icon from "@/components/elements/Icon";
 import InfoTags from "@/components/elements/InfoTags";
 
 export default {
-  name: 'VacancyPage',
-  components: { Button1, Icon, InfoTags}
+  name: 'CandidatePage',
+  components: { Button1, Icon, InfoTags},
+  data() {
+    return {
+      activeName: "resume",
+    };
+  },
 }
 </script>
 
-<style  lang="scss">
+<style  lang="scss" scoped>
 .price{
     white-space: nowrap;
+}
+
+.el-tabs { 
+  & ::v-deep &__item {
+    font-size: 18px !important;
+    font-weight: bold;
+    color: $black-400;
+    margin: -10px 0px 7px 0px;
+    &.is-active {
+      color: $blue-600;
+    }
+  }
+  & ::v-deep &__nav-scroll {
+    margin: 25px 0px 0px 25px;
+  }
+  & ::v-deep &__active-bar {
+    background-color: $blue-600;
+    height: 4px;
+  }
+  & ::v-deep &__header {
+    margin: 0px;
+  }
+  & ::v-deep &__nav-wrap::after {
+    height: 1px;
+  }
+  &__nav {
+    margin-left: 25px;
+  }
+}
+.link{
+    color: $blue-400;
+    &:hover{
+        color: $blue-700;
+    }
 }
 </style>

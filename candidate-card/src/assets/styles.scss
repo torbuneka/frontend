@@ -1,4 +1,4 @@
-@import "@/assets/variables.scss";
+@import "@/assets/colors.scss";
 
 #app {
     font-family: Arial;
@@ -115,13 +115,13 @@
         display: flex;
         flex-direction: row;
         margin-top: 20px;
-        .main-vacancy-page {
+        .main-candidate-page {
             margin: 0;
             padding: 40px;
             width: 792px;
             height: 2127px;
             text-align: left;
-            background-color: $background;
+            background-color: $white;
             .select-vac {
               background: #FFFFFF;
               border: 1px solid #E2E2E2;
@@ -172,10 +172,8 @@
                 }
             }
             .tab-bar {
-                align-items: flex-start;
-                .el-menu-item{
-                    font-size: 18px !important;
-                }
+              align-items: flex-start;
+              font-size: 18px !important; 
             }
             .candidate-info{
               text-align: left;
@@ -287,6 +285,8 @@
                         color: #242424;
                         list-style: none;
                         text-align: left;
+                        list-style: none;
+                        text-decoration:none ;
                     }
                 }
                 .vac-property{
