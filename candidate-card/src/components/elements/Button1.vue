@@ -95,7 +95,7 @@ export default {
   .el-button {
     border-radius: 12px;
     padding-top: 7px;
-    border-color: transparent !important;
+    border: none !important;
     position: relative;
     align-items: center !important;
     margin-right: 12px;
@@ -121,6 +121,8 @@ export default {
   }
   .big {
     height: 40px;
+    padding-left: 16px;
+    padding-right: 20px;
   }
   .medium {
     height: 30px;
@@ -160,7 +162,7 @@ export default {
   .content__text {
     font-weight: bold;
     font-size: 16px;
-    margin: 5px 0 5px 7px;
+    margin: 5px 0 5px 4px;
   }
 }
 </style>

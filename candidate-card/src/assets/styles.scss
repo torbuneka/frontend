@@ -17,89 +17,7 @@
     width: 1200px;
     margin: 0 auto; 
     align-self: center;
-    .right-panel {
-      width:384px;  
-      background: #FFFFFF;
-      text-align: left;
-      margin-left: 24px;
-      /*position:fixed;*/
-      .footer-bar{
-        height: 88px;
-        align-content: center;
-        display: flex;
-        justify-content: center;
-        vertical-align: middle;
-        button{
-          align-self: center;
-        }
-        .add_vacancy{
-          background: #2D81CE;
-          border-radius: 12px;
-          color: #FFFFFF;
-          font-weight: bold;
-          font-size: 16px;
-          width: 336px;
-          height: 40px;
-          border: none;
-        }
-      }
-      .el-menu-item{
-        font-size: 18px !important;
-      }
-      .top{
-        position:relative;
-        height: 67px;
-        display: flex;
-        flex-direction: column;
-        .Tabs{
-          height: 67px;
-          border-bottom: none;
-          font-size: 18px !important;
-        }
-      };
-      .info-vac{
-        p{
-          margin: 0;
-        }
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 50px;
-        text-align: left;
-        align-items: stretch;
-        align-content: center;
-        align-self: center;
-        padding: 24px;
-        position: relative;
-        border-bottom: 1px solid #ECECEC;
-        .info-big{
-          font-weight: bold;
-          font-size: 16px;
-          
-      }
-      
-      .info-blue{
-          color: #378BD8;
-      }
-      .info-vac_box{
-        display: flex;
-        flex-direction: row;
-        width: 293px;
-        justify-content: space-between;
-        align-items: center;
-        .area-middle__item{
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-        }
-      }
-      
-    .time-gray{
-        list-style: none;
-    }
-    }
     
-  }
   .text {
     margin: 0px;
     align-self: center;
@@ -304,7 +222,7 @@
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
-                    .candidate-menu_points{
+                    .candidate-menu-points{
                         display: flex;
                         flex-direction: row;
                         justify-content: end;

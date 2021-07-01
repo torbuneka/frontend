@@ -12,7 +12,7 @@
   </el-row>
 </template>
 <script>
-    export default {
+export default {
         data() {
             return {
                 url: '"@/assets/login.png"'

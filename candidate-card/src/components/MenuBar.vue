@@ -3,7 +3,7 @@
       <div class="menu_box">
       
       <img alt="t1" src="@/assets/talent.png" width="170" height="24">
-      <div class="tabs">
+      <div class="tabs-box">
         <el-tabs v-model="activeName">
           <el-tab-pane label="Вакансии" name="vacancy"></el-tab-pane>
           <el-tab-pane label="Кандидаты" name="candidate"></el-tab-pane>
@@ -48,7 +48,7 @@ export default {
 }
 </script>
 
-<style  lang="scss">
+<style  lang="scss" scored>
 .login_box{
   justify-content: space-between;
   align-items: center;
@@ -62,51 +62,49 @@ export default {
 .menu_box {
   display: flex;
   flex-direction: row;
-  /*height: 32px;*/
   width: 1200px;
   justify-content: space-between;
   align-items: center;
   margin: auto; 
-  
 }
 .menu{
   box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.06);
-  background-color: #FFFFFF;
+  background-color: $white;
   justify-content: space-between;
-  
 }
-.tabs {
+.tabs-box {
   display: flex;
   flex-direction: row;
   position: static;
   height: 60px;
- 
+  font-size: 16px;
+  font-weight: bold;
 }
 
 button {
   position: absolute;
 }
 .el-tabs {
-  & ::v-deep &__item {
+     &__item {
     font-size: 16px;
-    font-weight: bold;
-    color: $black-400;
+    font-weight: bold !important;
+    color: $black-900;
     margin: -10px 0px 7px 0px;
     &.is-active {
-      color: $blue-600;
+      color: $blue-600 !important;
     }
   }
-  & ::v-deep &__nav-scroll {
+   &__nav-scroll {
     margin: 25px 0px 0px 25px;
   }
-  & ::v-deep &__active-bar {
-    background-color: $blue-600;
-    height: 4px;
+   &__active-bar {
+    background-color: $blue-600 !important;
+    height: 3px !important;
   }
-  & ::v-deep &__header {
+   &__header {
     margin: 0px;
   }
-  & ::v-deep &__nav-wrap::after {
+   &__nav-wrap::after {
     height: 1px;
   }
   &__nav {

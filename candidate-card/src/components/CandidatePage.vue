@@ -27,7 +27,7 @@
                     <Button1 buttonSize="big" buttonColor="blue"  buttonText="Изменить" hasLeftIcon iconName="Pencil"/>
                     <Button1 buttonSize="big" buttonColor="blue" buttonText="Поделиться" hasLeftIcon iconName="Share"/>
                 </div>
-                <div class="candidate-menu_points">
+                <div class="candidate-menu-points">
                     <button> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="12" cy="4" r="2" fill="#0C0C0C"/><circle cx="12" cy="20" r="2" fill="#0C0C0C"/><circle cx="12" cy="12" r="2" fill="#0C0C0C"/>
                         </svg>
@@ -207,8 +207,12 @@ export default {
       color: $blue-600;
     }
   }
+  & ::v-deep &__nav {
+        margin-left: 0;
+    }
+  
   & ::v-deep &__nav-scroll {
-    margin: 25px 0px 0px 25px;
+    margin: 25px 0px 0px 0px;
   }
   & ::v-deep &__active-bar {
     background-color: $blue-600;

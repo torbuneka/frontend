@@ -104,6 +104,7 @@ export default {
   font-size: 16px;
   margin: 0;
   a{
+    color: $black-900;
     text-decoration:none ;
   }
 }
