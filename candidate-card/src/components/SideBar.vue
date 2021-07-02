@@ -27,7 +27,7 @@
         <div class="footer-bar">
             <button class="add_vacancy">Прикрепить к вакансии</button>
         </div>
-    </div>
+  </div>
     
 </div>
 </template>
@@ -42,12 +42,17 @@ export default {
 }
 </script>
 <style  lang="scss">
+.right-panel::-webkit-scrollbar{
+  width: 0;
+}
 .right-panel {
       width:384px;  
       background: $white;
       text-align: left;
       margin-left: 24px;
       position: fixed;
+      height: 90vh;
+      overflow-y: scroll;
       .footer-bar{
         height: 88px;
         align-content: center;

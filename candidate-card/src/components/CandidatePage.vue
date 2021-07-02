@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div>
-        <hr  style="color: #E2E2E2; margin-top: 24px; margin-bottom: 24px; width: 712px" >
+        <hr  style="color: #E2E2E2; margin-top: 24px; margin-bottom: 24px;" >
         <div class="contact-frame">
             <div class="contact-frame_socials">
                 <p>Мобильный</p>

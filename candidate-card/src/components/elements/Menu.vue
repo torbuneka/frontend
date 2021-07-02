@@ -30,7 +30,7 @@ export default {
     }
   }
   & ::v-deep &__nav-scroll {
-    margin: 25px 0px 0px 25px;
+    margin: 25px 0px 0px 0px;
   }
   & ::v-deep &__active-bar {
     background-color: $blue-600;

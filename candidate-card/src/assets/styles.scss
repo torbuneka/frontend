@@ -7,8 +7,12 @@
     text-align: center;
     background-color: $black-100;
   hr {
-    color: $black-300;
+    color: $black-200;
+    background-color:  $black-200;
     height: 1px;
+    margin: 0;
+    width: 100%;
+    border: none;
   }
 }
 
@@ -17,6 +21,8 @@
     width: 1200px;
     margin: 0 auto; 
     align-self: center;
+    top: 60px;
+    position: relative;
     
   .text {
     margin: 0px;

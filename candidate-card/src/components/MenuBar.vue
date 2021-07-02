@@ -72,7 +72,11 @@ export default {
   background-color: $white;
   justify-content: space-between;
   display: flex;
-  position: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
 }
 .tabs-box {
   display: flex;
