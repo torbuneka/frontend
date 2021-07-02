@@ -234,4 +234,6 @@ export default {
         color: $blue-700;
     }
 }
+
+
 </style>

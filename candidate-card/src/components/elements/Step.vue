@@ -38,15 +38,15 @@ export default {
 
 <style lang="scss">
 .step-box{
-    background-color: #EFF8FF;
-    border: 1px solid #D6EBFF;
+    background-color: $blue-100;
+    border: 1px solid $blue-200;
     box-sizing: border-box;
     border-radius: 10px;
     align-items: flex-start;
     padding: 16px;
     margin: 8px 0 8px 0;
     .done-stage{
-        color: #C0C0C0;
+        color: $black-400;
         vertical-align: middle;
     }
 }

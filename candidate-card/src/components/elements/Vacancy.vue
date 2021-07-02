@@ -111,11 +111,11 @@ export default {
 .text-about-blue{
     font-weight: normal;
     font-size: 14px;
-    color: #2D81CE;
+    color: $blue-600;
     margin: 0 0 0 0;
 }
 .text-about-gray {
-    color: #9E9E9E;
+    color: $black-500;
 }
 .bottom-box_info{
     display: flex;
@@ -154,8 +154,8 @@ export default {
 .box{
     text-align: left;
     padding: 16px;
-    background: #FCFCFC;
-    border: 1px solid #ECECEC;
+    background: $background-light;
+    border: 1px solid $black-200;
     box-sizing: border-box;
     border-radius: 12px;
     width: 368px;
@@ -166,7 +166,7 @@ export default {
     
 }
 .el-progress-bar{
-    background-color: #ECECEC;
+    background-color: $black-200;
     border-radius: 4px;
     width:336px;
     height:12px;
@@ -183,7 +183,7 @@ export default {
     position: static;
 }
 .el-progress-line{
-    background-color: #ECECEC;
+    background-color: $black-200;
     border-radius: 4px;
     width:336px;
     height:12px;

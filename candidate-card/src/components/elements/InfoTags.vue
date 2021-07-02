@@ -26,11 +26,11 @@
 .tag-box{
   margin-top: 24px;
   .el-tag {
-    background: #FAF9F9;;
-    color: #378BD8;
+    background: $black-100;
+    color: $blue-500;
     font-size: 16px;
     padding: 0px 8px;
-    border: 1px solid #ECECEC;
+    border: 1px solid $black-200;
     box-sizing: border-box;
     border-radius: 10px;
     height: 24px;
@@ -42,23 +42,23 @@
     line-height: 24px;
     margin-right: 12px;
     .el-tag__close{
-      color:  #378BD8;
+      color:  $blue-500;
       
     }
     .el-icon-close:hover{
       background: transparent;
-      color:#378BD8;
+      color:$blue-500;
     }
   }
   .el-tag:hover{
-    background: #ECECEC;
+    background: $black-200;
   }
   .el-tag:disabled{
-    background: #ECECEC;
-    color: #9E9E9E;
+    background: $black-200;
+    color: $black-500;
     .el-icon-close:hover{
       background: transparent;
-      color:#9E9E9E;
+      color:$black-500;
     }
   }
 }

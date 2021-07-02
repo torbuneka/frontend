@@ -3,7 +3,7 @@
     <div class="right-panel" >
         <div class="top">
             <Menu />
-            <hr style="color: #ECECEC; margin-top: 0" >
+            <hr style="color: $black-200; margin-top: 0" >
         </div>
         
         <div class="info-vac">
@@ -44,10 +44,10 @@ export default {
 <style  lang="scss">
 .right-panel {
       width:384px;  
-      background: #FFFFFF;
+      background: $white;
       text-align: left;
       margin-left: 24px;
-      /*position:fixed;*/
+      position: fixed;
       .footer-bar{
         height: 88px;
         align-content: center;
@@ -65,9 +65,9 @@ export default {
           }
         }
         .add_vacancy{
-          background: #2D81CE;
+          background: $blue-600;
           border-radius: 12px;
-          color: #FFFFFF;
+          color: $white;
           font-weight: bold;
           font-size: 16px;
           width: 336px;

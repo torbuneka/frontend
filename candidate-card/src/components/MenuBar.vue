@@ -9,7 +9,7 @@
           <el-tab-pane label="Кандидаты" name="candidate"></el-tab-pane>
           <el-tab-pane label="Рассылки" name="mailings"></el-tab-pane>
         </el-tabs>
-    </div>
+      </div>
       
       <div class="search">
         <form>
@@ -71,6 +71,8 @@ export default {
   box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.06);
   background-color: $white;
   justify-content: space-between;
+  display: flex;
+  position: flex;
 }
 .tabs-box {
   display: flex;

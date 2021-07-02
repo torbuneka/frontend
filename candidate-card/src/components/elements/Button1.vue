@@ -101,15 +101,15 @@ export default {
     margin-right: 12px;
   }
   .blueButton {
-      background: #EFF8FF; 
-      color: #2D81CE;
+      background: $blue-100; 
+      color: $blue-600;
     }
     .blueButton:hover {
-      background: #D6EBFF;
-      color: #1767b1;
+      background: $blue-200;
+      color: $blue-700;
     }
     .blueButton:disabled {
-      background: #faf9f9;
+      background: $black-100;
     }
   .el-button.medium {
     border-radius: 12px;
@@ -133,13 +133,13 @@ export default {
   }
 
   .darkBlueButton {
-    background: #2d81ce;
+    background: $blue-600;
   }
   .darkBlueButton:hover {
-    background: #1767b1;
+    background: $blue-700;
   }
   .darkBlueButton:disabled {
-    background: #e2e2e2;
+    background: $black-300;
   }
   .transparentButton {
     background: transparent;
@@ -148,7 +148,7 @@ export default {
   .transparentButton:hover {
     background: transparent;
     border-color: transparent;
-    background: #eff8ff;
+    background: $blue-100;
   }
   .button__content {
     display: flex;
