@@ -38,12 +38,12 @@
     .main_page {
         display: flex;
         flex-direction: row;
-        margin-top: 20px;
+        
         .main-candidate-page {
             margin: 0;
             padding: 40px;
-            width: 792px;
-            height: 2127px;
+            width: 712px;
+            
             text-align: left;
             background-color: $white;
             .select-vac {
