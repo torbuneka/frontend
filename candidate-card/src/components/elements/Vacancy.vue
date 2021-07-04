@@ -1,29 +1,40 @@
 <template>
   <div class="box">
     <div class="top-box">
-        <div class="bottom-box_info">
-            <p class="vacancy-name"><a> {{ vacancy }} </a></p>
+        <div class="top-box_info">
+          <div class="flex-row">
+            <a class="vacancy-name"> {{ vacancy }} </a>
+            <button class="button-info"> 
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.0025 8.53271C17.9467 8.92889 20.8645 12.8748 21.7225 17.7124C21.8953 18.6866 20.557 19.1888 19.8 18.5517C17.8605 16.9197 15.2249 15.7356 11.9997 15.5314C11.4485 15.4965 11 15.9477 11 16.5V18.1801C11 19.0573 9.95111 19.5094 9.31338 18.9071L2.79344 12.7494C2.3669 12.3465 2.37719 11.6647 2.8157 11.2749L9.33564 5.47943C9.98054 4.90619 11 5.364 11 6.22684V7.5C11 8.05228 11.4514 8.49599 12.0025 8.53271Z" fill="#E2E2E2"/>
+              </svg>
+            </button>
+          </div>
+            <button class="button-info" v-on:click="showSteps = !showSteps">
+              <svg v-show="!showSteps"  width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="24" height="24" rx="12" transform="matrix(1 0 0 -1 0 24)" fill="#ECECEC"/>
+                <path d="M14 12L10 16V8L14 12Z" fill="#0C0C0C"/>
+              </svg>
 
-            <button class="button-box_info" v-on:click="showSteps = !showSteps">
-              <svg v-show="!showSteps" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.70706 7.70709L1.70706 13.7071L0.292847 12.2929L5.58574 6.99999L0.292847 1.70709L1.70706 0.292878L7.70706 6.29288C8.09758 6.6834 8.09758 7.31657 7.70706 7.70709Z" fill="#0C0C0C"/>
+
+              <svg v-show="showSteps" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="24" height="24" rx="12" transform="matrix(1 0 0 -1 0 24)" fill="#ECECEC"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M11.266 12L8 15.266L8.73398 16L12 12.734L15.266 16L16 15.266L12.734 12L16 8.73398L15.266 8L12 11.266L8.73398 8L8 8.73398L11.266 12Z" fill="#0C0C0C"/>
               </svg>
-              <svg v-show="showSteps" width="14" height="14" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.79293 4.50004L0.646484 1.35359L1.35359 0.646484L4.50004 3.79293L7.64648 0.646484L8.35359 1.35359L5.20714 4.50004L8.35359 7.64648L7.64648 8.35359L4.50004 5.20714L1.35359 8.35359L0.646484 7.64648L3.79293 4.50004Z" fill="#0C0C0C"/>
-              </svg>
+
 
             </button>
         </div>
         <p class="text-about-blue">{{ company }}</p>
     </div>
-    <div class="bottom-box" v-show="showSteps">
+    <div class="stage-box" v-show="showSteps">
       <VacancySteps stage="stage"/>
     </div>
     <div class="bottom-box" v-show="!showSteps">
       <div class="bottom-box_info">
         <p class="text-stage text-about-blue">{{ stage }}</p>
       </div>
-      <div class="bottom-box bottom-box_info" >
+    <div class="bottom-progress-bar" >
         <el-progress  :percentage="fot(stage)" :stroke-width="12" :class="comput_color(stage)"  :show-text="false" ></el-progress>
       </div>
         
@@ -99,14 +110,24 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
+  a{
+    margin-right: 6px;
+  }
+  svg{
+    margin-right: 4px;
+  }
 }
 .vacancy-name{
   font-weight: bold;
   font-size: 16px;
-  margin: 0;
+  margin: 0 4px 0 0;
+  line-height: 24px;
+  align-items: bottom;
+  padding:0;
   a{
     color: $black-900;
-    text-decoration:none ;
+    text-decoration: none;
+    line-height: 24px;
   }
 }
 .text-about-blue{
@@ -114,16 +135,19 @@ export default {
     font-size: 14px;
     color: $blue-600;
     margin: 0 0 0 0;
+    line-height: 20px;
 }
 .text-about-gray {
-    color: $black-500;
+    color: $black-400;
 }
 .bottom-box_info{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    position: static;
-    padding-top: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.bottom-progress-bar{
+  margin: 12px 0 14px 0;
 }
     
 .text-stage{
@@ -131,11 +155,16 @@ export default {
     margin: 0;
 }
 .top-box{
-    height: 48px;
-    padding-bottom: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  height: 48px;
+  padding-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  .top-box_info{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 .bottom-box{
     /*height: 80px;*/
@@ -144,13 +173,12 @@ export default {
     justify-content: space-around;
     align-content:space-around;
 }
-.button-box_info{
+.button-info{
   position: static;
-  height: 24px;
-  width: 24px;
-  border-radius: 45px;
+  padding: 0;
   border: none;
   background: none;
+  align-items: right;
 }
 .box{
     text-align: left;
@@ -161,7 +189,6 @@ export default {
     border-radius: 12px;
     width: 368px;
     /*height: 184px;*/
-    justify-content: space-between;
     margin: 8px 8px 0 8px;
     height: fit-content;
     

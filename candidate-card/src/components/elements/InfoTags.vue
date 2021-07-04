@@ -29,11 +29,11 @@
     background: $black-100;
     color: $blue-500;
     font-size: 16px;
-    padding: 0px 8px;
+    padding: 4px 12px;
     border: 1px solid $black-200;
     box-sizing: border-box;
     border-radius: 10px;
-    height: 24px;
+    
     align-items:center;
     font-family: Arial;
     font-style: normal;

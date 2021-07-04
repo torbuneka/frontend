@@ -6,6 +6,7 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     background-color: $black-100;
+    
   hr {
     color: $black-200;
     background-color:  $black-200;
@@ -23,7 +24,7 @@
     align-self: center;
     top: 60px;
     position: relative;
-    
+    height: 100%;
   .text {
     margin: 0px;
     align-self: center;
@@ -65,14 +66,16 @@
                 margin: 0px;
                 .contact-frame_socials {
                     background-color:  $black-100;
-                    height: 40px;
                     text-align: left;
                     padding: 8px 20px;
                     display: flex;
                     flex-direction: row;
                     align-items: center;
+                    margin-bottom: 4px;
                     p {
-                        width: 266px
+                      line-height: 24px;
+                      margin: 0;
+                      width: 246px;
                     }
                     .links {
                         display: flex;
