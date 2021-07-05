@@ -1,7 +1,7 @@
 <template>
     <div class="steps">
-        <Step stepName="Добавлен" done="true" />
-        <Step stepName="Телефонное интервью" done="false"/>
+        <Step stepName="Добавлен" done=1 />
+        <Step stepName="Телефонное интервью" done=0 />
         <Step stepName="Назначено интервью с рекрутером"/>
         <Step stepName="Резюме у заказчика"/>
         <Step stepName="Тестовое задание"/>
