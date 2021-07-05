@@ -5,7 +5,7 @@
           <div class="flex-row">
             <a class="vacancy-name"> {{ vacancy }} </a>
           </div>
-            <button class="button-info" v-on:click="showSteps = !showSteps">
+            <button class="button-info" v-on:click="showSteps = false">
               <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="24" height="24" rx="12" transform="matrix(1 0 0 -1 0 24)" fill="#ECECEC"/>
               <path fill-rule="evenodd" clip-rule="evenodd" d="M11.266 12L8 15.266L8.73398 16L12 12.734L15.266 16L16 15.266L12.734 12L16 8.73398L15.266 8L12 11.266L8.73398 8L8 8.73398L11.266 12Z" fill="#0C0C0C"/>
@@ -67,13 +67,12 @@ export default {
     nameP:  {
       type: String,
       default: "Иван Иванов",
+    },
+    showSteps: {
+      type: Boolean
     }
   },
-  data() {
-    return {
-      showSteps: false
-    }
-  }
+  
 };
 </script>
 

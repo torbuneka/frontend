@@ -5,10 +5,8 @@
             <Menu />
             <hr style="color: $black-200; margin-top: 0" >
         </div>
-        <SideVacancy />
-        <SideSteps />
-        
-        
+        <SideVacancy v-if="showSteps == false" v-model="showSteps" />
+        <SideSteps v-else v-model="showSteps"/>
   </div>
     
 </div>
@@ -21,7 +19,12 @@ import Menu from "@/components/elements/Menu";
 
 export default {
     name: 'SideBar',
-    components: { SideVacancy, Menu, SideSteps}
+    components: { SideVacancy, Menu, SideSteps},
+    data() {
+        return{
+          showSteps: false
+        }
+    }
 }
 </script>
 <style  lang="scss">
@@ -35,7 +38,7 @@ export default {
       margin-left: 24px;
       position: fixed;
       height: 90vh;
-      overflow-y: scroll;
+      overflow-y: auto;
       border-radius: 0px 0px 12px 12px;
       .footer-bar{
         height: 88px;
