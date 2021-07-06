@@ -5,8 +5,8 @@
             <Menu />
             <hr style="color: $black-200; margin-top: 0" >
         </div>
-        <SideVacancy v-if="showSteps == false" v-model="showSteps" />
-        <SideSteps v-else v-model="showSteps"/>
+        <SideVacancy v-if="selectedVacancy" v-on:select-vacancy="selectVacancy" />
+        <SideSteps v-else />
   </div>
     
 </div>
@@ -22,9 +22,21 @@ export default {
     components: { SideVacancy, Menu, SideSteps},
     data() {
         return{
-          showSteps: false
+          selectedVacancy: [{
+            vacancy: '', company: '', stage:''
+          }]
         }
-    }
+    },
+    methods: {
+      selectVacancy([vacancy, company, stage]){
+        const a ={
+          vacancy: vacancy,
+          company: company,
+          stage: stage
+        }
+        this.selectedVacancy = a;
+      }
+    },
 }
 </script>
 <style  lang="scss">

@@ -11,9 +11,9 @@
             
         </div>
         
-        <Vacancy vacancy="Бизнес аналитик" stage="Назначено интервью с внутренним заказчиком"   time="В работе 4 дня" nameP="Елена Васина" v-model="showSteps"/>
-        <Vacancy vacancy="Аналитик" stage="Добавлен"   time="В работе 5 дней" nameP="Артем Паловинчев"/>
-        <Vacancy vacancy="Системный аналитик" stage="Проверка службы безопасности"  time="В работе 12 дней" nameP="Семён Инванов" v-model="showSteps"/>  
+        <Vacancy v-on:select-vacancy="selectVacancy" vacancy="Бизнес аналитик" stage="Назначено интервью с внутренним заказчиком"   time="В работе 4 дня" nameP="Елена Васина" />
+        <Vacancy v-on:select-vacancy="selectVacancy" vacancy="Аналитик" stage="Добавлен"   time="В работе 5 дней" nameP="Артем Паловинчев"/>
+        <Vacancy v-on:select-vacancy="selectVacancy" vacancy="Системный аналитик" stage="Проверка службы безопасности"  time="В работе 12 дней" nameP="Семён Инванов" />  
         <hr style="color: $black-200; margin-top: 4px" >
         <div class="footer-bar">
             <button class="add_vacancy">Прикрепить к вакансии</button>
@@ -28,6 +28,11 @@ export default {
     name: 'SideVacancy',
     components: { Vacancy },
     props: ['showSteps'],
+    methods: {
+        selectVacancy([vacancy, company, stage]){
+          this.$emit('select-vacancy', [vacancy, company, stage])
+      }
+    }
 }
 </script>
 
