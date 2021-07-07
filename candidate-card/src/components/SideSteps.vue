@@ -116,10 +116,10 @@ export default {
           stage: String,
           time: String,
           nameP: String,
-          percentage: Number
-        }
-      }
-    }
+          percentage: Number,
+        };
+      },
+    },
     // showSteps: {
     //   type: Boolean,
     // },

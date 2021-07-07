@@ -2,37 +2,37 @@
   <!-- Новый компонент, сейчас используется для всех кнопок -->
   <div class="button-type">
     <el-button
-    v-bind:class="{
-      blueButton: buttonColor === 'blue',
-      darkBlueButton: buttonColor === 'darkBlue',
-      transparentButton: buttonColor === 'transparent',
-      big: buttonSize === 'big',
-      medium: buttonSize === 'medium',
-      small: buttonSize === 'small',
-    }"
-    v-bind:disabled="disabled"
-    @click="click"
-  >
-    <div class="button__content">
-      <Icon
-        v-if="hasLeftIcon"
-        v-bind:icon-name="iconName"
-        v-bind:icon-color="contentColor"
-      />
-      <p
-        v-if="buttonText !== ''"
-        class="content__text"
-        v-bind:style="{ color: contentColor }"
-      >
-        {{ buttonText }}
-      </p>
-      <Icon
-        v-if="hasRightIcon"
-        v-bind:icon-name="iconName"
-        v-bind:icon-color="contentColor"
-      />
-    </div>
-  </el-button>
+      v-bind:class="{
+        blueButton: buttonColor === 'blue',
+        darkBlueButton: buttonColor === 'darkBlue',
+        transparentButton: buttonColor === 'transparent',
+        big: buttonSize === 'big',
+        medium: buttonSize === 'medium',
+        small: buttonSize === 'small',
+      }"
+      v-bind:disabled="disabled"
+      @click="click"
+    >
+      <div class="button__content">
+        <Icon
+          v-if="hasLeftIcon"
+          v-bind:icon-name="iconName"
+          v-bind:icon-color="contentColor"
+        />
+        <p
+          v-if="buttonText !== ''"
+          class="content__text"
+          v-bind:style="{ color: contentColor }"
+        >
+          {{ buttonText }}
+        </p>
+        <Icon
+          v-if="hasRightIcon"
+          v-bind:icon-name="iconName"
+          v-bind:icon-color="contentColor"
+        />
+      </div>
+    </el-button>
   </div>
 </template>
 <script>
@@ -91,7 +91,7 @@ export default {
 };
 </script>
 <style  lang="scss">
-.button-type{
+.button-type {
   .el-button {
     border-radius: 12px;
     padding-top: 7px;
@@ -101,16 +101,16 @@ export default {
     margin-right: 12px;
   }
   .blueButton {
-      background: $blue-100; 
-      color: $blue-600;
-    }
-    .blueButton:hover {
-      background: $blue-200;
-      color: $blue-700;
-    }
-    .blueButton:disabled {
-      background: $black-100;
-    }
+    background: $blue-100;
+    color: $blue-600;
+  }
+  .blueButton:hover {
+    background: $blue-200;
+    color: $blue-700;
+  }
+  .blueButton:disabled {
+    background: $black-100;
+  }
   .el-button.medium {
     border-radius: 12px;
     padding-top: 2px;

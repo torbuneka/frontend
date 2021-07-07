@@ -16,7 +16,7 @@
         </svg>
         <p class="info-big text info-blue">3 вакансии на рассмотрении</p>
       </div>
-      <p style="color: #C0C0C0; ">В работе с 24.05.2021</p>
+      <p style="color: #c0c0c0">В работе с 24.05.2021</p>
     </div>
 
     <Vacancy
@@ -50,28 +50,28 @@ export default {
           stage: "Назначено интервью с внутренним заказчиком",
           time: "В работе 4 дня",
           nameP: "Елена Васина",
-          company: 'Test 1'
+          company: "Test 1",
         },
         {
           name: "Аналитик",
           stage: "Добавлен",
           time: "В работе 5 дней",
           nameP: "Артем Паловинчев",
-          company: 'Test 2'
+          company: "Test 2",
         },
         {
           name: "Системный аналитик",
           stage: "Отказ",
           time: "В работе 3 дня",
           nameP: "Семен Иванов",
-          company: 'Test 3'
+          company: "Test 3",
         },
         {
           name: "Ведущий аналитик",
           stage: "Оффер",
           time: "В работе 14 дней",
           nameP: "Владимир Кузнецов",
-          company: 'Test 4'
+          company: "Test 4",
         },
       ],
     };
