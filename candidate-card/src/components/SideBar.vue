@@ -1,43 +1,43 @@
 <template>
-<div>
-    <div class="right-panel" >
-        <div class="top">
-            <Menu />
-            <hr style="color: $black-200; margin-top: 0" >
-        </div>
-        <SideVacancy v-if="selectedVacancy" v-on:select-vacancy="selectVacancy" />
-        <SideSteps v-else />
+  <div>
+    <div class="right-panel">
+      <div class="top">
+        <Menu />
+        <hr style="color: $black-200; margin-top: 0" />
+      </div>
+      <SideSteps
+        v-if="selectedVacancy"
+        v-on:select-vacancy="selectVacancy"
+        :selected-vacancy="selectedVacancy"
+      />
+      <SideVacancy v-else v-on:select-vacancy="selectVacancy" />
+      <ContactAdd />
+    </div>
   </div>
-    
-</div>
 </template>
+
 <script>
 import SideVacancy from "@/components/SideVacancy";
 import SideSteps from "@/components/SideSteps";
 import Menu from "@/components/elements/Menu";
 
+import ContactAdd from "@/components/ContactAdd";
+
 
 export default {
-    name: 'SideBar',
-    components: { SideVacancy, Menu, SideSteps},
-    data() {
-        return{
-          selectedVacancy: [{
-            vacancy: '', company: '', stage:''
-          }]
-        }
+  name: 'SideBar',
+  components: { SideVacancy, Menu, SideSteps,ContactAdd},
+  data() {
+    return {
+      selectedVacancy: null,
+    };
+  },
+  methods: {
+    selectVacancy(value = null) {
+      this.selectedVacancy = value ? { ...value } : value;
     },
-    methods: {
-      selectVacancy([vacancy, company, stage]){
-        const a ={
-          vacancy: vacancy,
-          company: company,
-          stage: stage
-        }
-        this.selectedVacancy = a;
-      }
-    },
-}
+  },
+};
 </script>
 <style  lang="scss">
 .right-panel::-webkit-scrollbar{
