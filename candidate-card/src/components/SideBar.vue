@@ -92,9 +92,6 @@ export default {
     }
   }
   .info-vac {
-    p {
-      margin: 0;
-    }
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -106,6 +103,9 @@ export default {
     padding: 24px;
     position: relative;
     border-bottom: 1px solid $black-200;
+    p {
+      margin: 0;
+    }
     .info-big {
       font-weight: bold;
       font-size: 16px;

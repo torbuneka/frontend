@@ -1,25 +1,47 @@
 <template>
   <div class="main-contact-box">
-    <div class="top">
+    <div class="top-contact">
       <h3>Средства связи</h3>
       <p>Добавьте, или измените средства связи кандидата</p>
     </div>
-    <div class="middle">
+    <div class="middle flex-row">
       <CandidateContactList />
       <Input input="dfdfdf" inputSize="big" />
+      <Icon iconName="delete" iconColor="#C0C0C0" />
+    </div>
+    <div class="middle flex-row">
+      <CandidateContactList />
+      <Input input="dfdfdf" inputSize="big" />
+      <Icon iconName="delete" iconColor="#C0C0C0" />
+    </div>
+    <div class="middle flex-row">
+      <CandidateContactList />
+      <Input input="dfdfdf" inputSize="big" />
+      <Icon iconName="delete" iconColor="#C0C0C0" />
+    </div>
+    <div class="middle flex-row">
+      <CandidateContactList />
+      <Input input="dfdfdf" inputSize="big" />
+      <Icon iconName="delete" iconColor="#C0C0C0" />
+    </div>
+    <div class="middle flex-row">
+      <CandidateContactList />
+      <Input input="dfdfdf" inputSize="big" />
+      <Icon iconName="delete" iconColor="#C0C0C0" />
     </div>
     <div class="bottom">
-      <button>Добавить</button>
+      <button class="add-info">Добавить</button>
     </div>
   </div>
 </template>
 
 <script>
 import Input from "@/components/elements/Input";
+import Icon from "@/components/elements/Icon";
 import CandidateContactList from "@/components/CandidateContactList";
 
 export default {
-  components: { Input, CandidateContactList },
+  components: { Input, CandidateContactList, Icon },
 };
 </script>
 
@@ -30,8 +52,15 @@ export default {
   border-radius: 12px;
   border: 1px solid $black-200;
   padding: 24px;
-  .top {
-    margin: 0;
+  font-family: 'Arial';
+  .middle {
+    margin: 12px 0;
+    .Input{
+      margin-right: 12px;
+    }
+  }
+  .top-contact {
+    margin: 0 0 24px 0;
     h3 {
       font-weight: bold;
       font-size: 24px;
@@ -44,7 +73,32 @@ export default {
       font-weight: normal;
       font-size: 15px;
       line-height: 24px;
-      margin: 4px 0px;
+      margin: 4px 0 0 0;
+      padding: 0;
+    }
+  }
+  .bottom {
+    margin: 24px 0 0 0;
+    button {
+      align-self: center;
+      position: relative;
+      &:hover {
+        background: $blue-900;
+      }
+      &:disabled {
+        background: $black-300;
+        color: $black-500;
+      }
+    }
+    .add-info {
+      background: $blue-600;
+      border-radius: 12px;
+      color: $white;
+      font-weight: bold;
+      font-size: 16px;
+      width: 428px;
+      height: 40px;
+      border: none;
     }
   }
 }

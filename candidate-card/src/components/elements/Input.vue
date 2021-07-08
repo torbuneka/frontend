@@ -36,9 +36,11 @@ export default {
 <style lang="scss">
 .input-type {
   .el-input {
+    width: 253px;
     .el-input__inner {
       border-radius: 12px;
-      color: $black_500;
+      color: $blue_700;
+      font-size: 16px;
       .small {
         background: $white;
         color: $black_500;
@@ -46,7 +48,6 @@ export default {
         box-sizing: border-box;
         border-radius: 8px;
         padding: 0px 10px 0px 12px;
-        font-size: 16px;
         line-height: 24px;
       }
       .medium {
@@ -56,7 +57,6 @@ export default {
         box-sizing: border-box;
         border-radius: 12px;
         padding: 4px 10px 4px 12px;
-        font-size: 16px;
         line-height: 24px;
       }
       .big {
@@ -66,7 +66,7 @@ export default {
         box-sizing: border-box;
         border-radius: 12px;
         padding: 8px 10px 8px 16px;
-        font-size: 16px;
+       
         line-height: 24px;
       }
 

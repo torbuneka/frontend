@@ -137,9 +137,11 @@ export default {
   border-radius: 0px 0px 12px 12px;
   button {
     align-self: center;
+
     &:hover {
       background: $blue-900;
     }
+
     &:disabled {
       background: $black-300;
       color: $black-500;
@@ -164,9 +166,11 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
+
   a {
     margin-right: 6px;
   }
+
   svg {
     margin-right: 4px;
   }
