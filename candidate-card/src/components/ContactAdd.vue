@@ -26,7 +26,7 @@
     </div>
     <div class="middle flex-row">
       <CandidateContactList />
-      <Input input="dfdfdf" inputSize="big" />
+      <Input input="" inputSize="big" />
       <Icon iconName="delete" iconColor="#C0C0C0" />
     </div>
     <div class="bottom">

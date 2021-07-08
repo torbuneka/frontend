@@ -9,7 +9,8 @@
         small: inputSize === 'small',
       }"
       v-bind:disabled="disabled"
-      :value="value"
+      :value="value" 
+      :rules="rule"
     ></el-input>
   </div>
 </template>
@@ -25,11 +26,20 @@ export default {
       type: Boolean,
       default: false,
     },
-    input: {
+    /*input: {
       type: String,
       default: "",
-    },
+      
+    },*/
   },
+  data() {
+    return {
+      input: '',
+      rule: {
+        input: [{required:true, message: 'Please input event name', trigger: 'blur'}]
+      }
+    }
+  }
 };
 </script>
 
@@ -75,6 +85,9 @@ export default {
       }
       &:active {
         border: 1px solid #57a2e8;
+      }
+      &:invalid{
+        border: 1px solid red;
       }
       &:filled {
         color: $black_900;

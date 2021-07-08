@@ -66,6 +66,7 @@
               <circle cx="12" cy="12" r="2" fill="#0C0C0C" />
             </svg>
           </button>
+          <ActionsButton />
         </div>
       </div>
     </div>
@@ -252,10 +253,11 @@
 import Button1 from "@/components/elements/Button1";
 import Icon from "@/components/elements/Icon";
 import InfoTags from "@/components/elements/InfoTags";
+import ActionsButton from "@/components/elements/ActionsButton";
 
 export default {
   name: "CandidatePage",
-  components: { Button1, Icon, InfoTags },
+  components: { Button1, Icon, InfoTags,ActionsButton },
   data() {
     return {
       activeName: "resume",
